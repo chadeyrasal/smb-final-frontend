@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, applyMiddleware, compose } from 'redux'; // we need access to the createStore method to be able to set up a store
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk'; // for async redux
 import { Provider } from 'react-redux';
 
@@ -11,6 +11,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 let reducer = '';
 
 // the store is where you store your data globally;
+// the store can be created in another file and then imported into index.js
 let store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
 
 // the reducer will tell us what to do with our store based on certain actions;
