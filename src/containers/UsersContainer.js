@@ -10,4 +10,4 @@ class UsersContainer extends React.Component {
   }
 }
 
-export default UsersContainer
+export default UsersContainer;
