@@ -9,3 +9,5 @@ class TripsContainer extends React.Component {
     )
   }
 }
+
+export default TripsContainer;

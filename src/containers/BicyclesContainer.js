@@ -9,3 +9,5 @@ class BicyclesContainer extends React.Component {
     )
   }
 }
+
+export default BicyclesContainer;

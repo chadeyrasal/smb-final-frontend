@@ -9,3 +9,5 @@ class NeighbourhoodsContainer extends React.Component {
     )
   }
 }
+
+export default NeighbourhoodsContainer;

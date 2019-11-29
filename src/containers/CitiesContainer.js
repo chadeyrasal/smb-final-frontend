@@ -9,3 +9,5 @@ class CitiesContainer extends React.Component {
     )
   }
 }
+
+export default CitiesContainer;

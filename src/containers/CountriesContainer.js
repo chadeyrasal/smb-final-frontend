@@ -9,3 +9,5 @@ class CountriesContainer extends React.Component {
     )
   }
 }
+
+export default CountriesContainer;
