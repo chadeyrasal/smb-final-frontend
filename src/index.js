@@ -3,16 +3,15 @@ import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk'; // for async redux
 import { Provider } from 'react-redux';
+import cityReducer from './reducers/cityReducer';
 
 import App from './App';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-let reducer = '';
-
 // the store is where you store your data globally;
 // the store can be created in another file and then imported into index.js
-let store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
+let store = createStore(cityReducer, composeEnhancers(applyMiddleware(thunk)));
 
 // the reducer will tell us what to do with our store based on certain actions;
 // we send an action object to our reducer and the reducer is responsible for taking in that action object
