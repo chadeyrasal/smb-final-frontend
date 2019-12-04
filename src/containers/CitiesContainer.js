@@ -12,7 +12,7 @@ class CitiesContainer extends React.Component {
     return (
       <div>
         CitiesContainer
-        <CitiesList/>
+        <CitiesList cities={this.props.cities} />
       </div>
     )
   }
