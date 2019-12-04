@@ -6,7 +6,7 @@ import {fetchCityBicycles} from '../actions/fetchCityBicycles';
 
 class BicyclesContainer extends React.Component {
   componentDidMount() {
-    this.props.fetchCityBicycles()
+    //this.props.fetchCityBicycles()
   }
 
   render() {
