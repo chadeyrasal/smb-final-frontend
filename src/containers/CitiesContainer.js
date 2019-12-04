@@ -5,6 +5,7 @@ class CitiesContainer extends React.Component {
     return (
       <div>
         CitiesContainer
+        <CitiesList/>
       </div>
     )
   }
