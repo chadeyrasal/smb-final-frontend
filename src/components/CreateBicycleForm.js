@@ -1,6 +1,15 @@
 import React from 'react';
 
 class CreateBicycleForm extends React.Component {
+  state = {
+    title: '',
+    description: '',
+    bicycle_type: '',
+    size: '',
+    colour: '',
+    price: ''
+  }
+
   render() {
     return (
       <div>
