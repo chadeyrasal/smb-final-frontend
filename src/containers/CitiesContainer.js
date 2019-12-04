@@ -18,8 +18,8 @@ class CitiesContainer extends React.Component {
   }
 }
 
-const mapStateToProps = (state) {
-  return{
+const mapStateToProps = (state) => {
+  return {
     cities: state.cities
   }
 }
