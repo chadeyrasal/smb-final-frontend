@@ -7,3 +7,5 @@ const BicyclesList = (props) => {
     </div>
   )
 }
+
+export default BicyclesList;
