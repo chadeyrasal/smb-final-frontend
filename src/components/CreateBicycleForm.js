@@ -10,15 +10,26 @@ class CreateBicycleForm extends React.Component {
     price: ''
   }
 
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
+  handleSubmit = (event) => {
+    debugger
+    //event.preventDefault()
+  }
+
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <h2>New Listing</h2><br/>
           <label>Listing Title: </label><br/>
-          <input type='text'></input><br/><br/>
+          <input type='text' value={this.state.title} name='title' onChange={this.handleChange}></input><br/><br/>
           <label>Listing Description: </label><br/>
-          <input type='text'></input><br/><br/>
+          <input type='text' value={this.state.description} name='description' onChange={this.handleChange}></input><br/><br/>
           <label>Bicycle Type: </label><br/>
             <div className="radio">
               <label>
@@ -70,9 +81,10 @@ class CreateBicycleForm extends React.Component {
               </label>
             </div><br/>
           <label>Bicycle Colour: </label><br/>
-          <input type='text'></input><br/><br/>
+          <input type='text' value={this.state.colour} name='colour' onChange={this.handleChange}></input><br/><br/>
           <label>Price: </label><br/>
-          <input type='text'></input><br/><br/>
+          <input type='text' value={this.state.price} name='price' onChange={this.handleChange}></input><br/><br/>
+          <input type='submit' value='Create Listing'></input>
         </form>
       </div>
     )
