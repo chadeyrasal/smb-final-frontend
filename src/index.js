@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk'; // for async redux
 import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
 import cityReducer from './reducers/cityReducer';
 
 import App from './App';
@@ -21,6 +22,8 @@ let store = createStore(cityReducer, composeEnhancers(applyMiddleware(thunk)));
 ReactDOM.render(
   // wrapping a component in Provider will give this component and all children components access to the global store
   <Provider store={store}>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </Provider>,
   document.getElementById('root'));
