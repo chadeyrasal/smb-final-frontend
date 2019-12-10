@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Route} from 'react-router-dom';
 import CreateBicycleForm from '../components/CreateBicycleForm';
 import BicyclesList from '../components/BicyclesList';
 import {fetchCityBicycles} from '../actions/fetchCityBicycles';
@@ -13,7 +14,7 @@ class BicyclesContainer extends React.Component {
     return (
       <div>
         BicyclesContainer
-        <CreateBicycleForm />
+        <Route path='/bicycles/new' component={CreateBicycleForm}></Route>
         <BicyclesList/>
       </div>
     )
