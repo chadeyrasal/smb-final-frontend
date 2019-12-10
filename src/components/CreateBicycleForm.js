@@ -21,6 +21,14 @@ class CreateBicycleForm extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.addBicycle(this.state);
+    this.setState({
+      title: '',
+      description: '',
+      bicycle_type: '',
+      size: '',
+      colour: '',
+      price: ''
+    })
   }
 
   render() {
