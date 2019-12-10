@@ -1,9 +1,10 @@
 import React from 'react';
+import CityPage from './CityPage';
 
 const CitiesList = (props) => {
   return (
     <div>
-      {props.cities.map(city => <li key={city.id}>{city.name} - {city.country.name}</li>)}
+      {props.cities.map(city => <div key={city.id}><CityPage city={city}/></div>)}
     </div>
   )
 }
