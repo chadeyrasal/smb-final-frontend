@@ -1,4 +1,6 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {addBicycle} from '../actions/addBicycle'
 
 class CreateBicycleForm extends React.Component {
   state = {
@@ -17,8 +19,8 @@ class CreateBicycleForm extends React.Component {
   }
 
   handleSubmit = (event) => {
-    debugger
-    //event.preventDefault()
+    event.preventDefault();
+    this.props.addBicycle(this.state);
   }
 
   render() {
@@ -91,4 +93,4 @@ class CreateBicycleForm extends React.Component {
   }
 }
 
-export default CreateBicycleForm;
+export default connect(null, {addBicycle})(CreateBicycleForm);
