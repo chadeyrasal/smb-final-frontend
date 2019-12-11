@@ -14,7 +14,7 @@ class BicyclesContainer extends React.Component {
     return (
       <div>
         BicyclesContainer
-        <Switch> // Switch chooses the first route that matches the path, so routes order matters
+        <Switch> {/* Switch chooses the first route that matches the path, so routes order matters */}
           <Route path='/bicycles/new' component={CreateBicycleForm}></Route>
         </Switch>
         <BicyclesList/>
