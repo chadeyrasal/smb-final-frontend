@@ -1,5 +1,6 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom';
+import NeighbourhoodsContainer from '../containers/NeighbourhoodsContainer';
 
 const CityPage = (props) => {
   let city = props.cities[props.match.params.id - 1]
@@ -9,6 +10,7 @@ const CityPage = (props) => {
     <div>
       <h2>{city ? city.name : null}</h2>
       <h3>{city ? city.country.name : null}</h3>
+      <NeighbourhoodsContainer />
     </div>
   )
 }
