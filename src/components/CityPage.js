@@ -3,8 +3,7 @@ import {Redirect} from 'react-router-dom';
 import NeighbourhoodsContainer from '../containers/NeighbourhoodsContainer';
 
 const CityPage = (props) => {
-  let city = props.cities[props.match.params.id - 1]
-  // Won't work if some entries have been deleted in the backend, because then id - 1 won't match array index
+  let city = props.cities.filter(city => city.id == props.match.params.id)[0]
 
   return (
     <div>
