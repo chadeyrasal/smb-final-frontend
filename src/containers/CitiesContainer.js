@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {Route} from 'react-router-dom'
 import CitiesList from '../components/CitiesList';
 import {fetchCities} from '../actions/fetchCities';
+import CityPage from '../components/CityPage';
 
 class CitiesContainer extends React.Component {
   componentDidMount() {
@@ -13,7 +14,8 @@ class CitiesContainer extends React.Component {
     return (
       <div>
         CitiesContainer
-        <Route path='/cities' render={() => <CitiesList cities={this.props.cities} />} />
+        <Route exact path='/cities' render={() => <CitiesList cities={this.props.cities} />} />
+        <Route path='/cities/:id' render={(routerProps) => <CityPage {...routerProps} cities={this.props.cities} />}/>
       </div>
     )
   }

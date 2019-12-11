@@ -1,9 +1,11 @@
 import React from 'react';
 
 const CityPage = (props) => {
+  let city = props.cities[props.match.params.id - 1]
+
   return (
     <li>
-      {props.city.name} - {props.city.country.name}
+      {city ? city.name : null} - {city ? city.country.name : null}
     </li>
   )
 }
