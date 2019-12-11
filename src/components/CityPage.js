@@ -10,7 +10,7 @@ const CityPage = (props) => {
     <div>
       <h2>{city ? city.name : null}</h2>
       <h3>{city ? city.country.name : null}</h3>
-      <NeighbourhoodsContainer />
+      <NeighbourhoodsContainer city={city}/>
     </div>
   )
 }
