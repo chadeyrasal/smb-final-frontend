@@ -36,65 +36,47 @@ class CreateBicycleForm extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <h2>New Listing</h2><br/>
+
           <label>Listing Title: </label><br/>
           <input type='text' value={this.state.title} name='title' onChange={this.handleChange}></input><br/><br/>
+
           <label>Listing Description: </label><br/>
-          <input type='text' value={this.state.description} name='description' onChange={this.handleChange}></input><br/><br/>
+          <textarea value={this.state.description} name='description' onChange={this.handleChange}></textarea><br/><br/>
+
           <label>Bicycle Type: </label><br/>
-            <div className="radio">
-              <label>
-                <input type="radio" value="option1" />
-                City Bicycle
-              </label>
-            </div>
-            <div className="radio">
-              <label>
-                <input type="radio" value="option2" />
-                Mountain Bicycle
-              </label>
-            </div>
-            <div className="radio">
-              <label>
-                <input type="radio" value="option3" />
-                Road Bicycle
-              </label>
-            </div>
-            <div className="radio">
-              <label>
-                <input type="radio" value="option4" />
-                Folding Bicycle
-              </label>
-            </div>
-            <div className="radio">
-              <label>
-                <input type="radio" value="option5" />
-                Trekking Bicycle
-              </label>
-            </div><br/>
-          <label>Bicycle Size: </label>
-            <div className="radio">
-              <label>
-                <input type="radio" value="option6" />
-                Small
-              </label>
-            </div>
-            <div className="radio">
-              <label>
-                <input type="radio" value="option7" />
-                Medium
-              </label>
-            </div>
-            <div className="radio">
-              <label>
-                <input type="radio" value="option8" />
-                Large
-              </label>
-            </div><br/>
+          <select name='bicycle_type' value={this.state.bicycle_type} onChange={this.handleChange}>
+            <option></option>
+            <option>City Bicycle</option>
+            <option>Mountain Bicycle</option>
+            <option>Road Bicycle</option>
+            <option>Folding Bicycle</option>
+            <option>Trekking Bicycle</option>
+          </select><br/><br/>
+
+          <label>Bicycle Size: </label><br/>
+          <select name='size' value={this.state.size} onChange={this.handleChange}>
+            <option></option>
+            <option>Small</option>
+            <option>Medium</option>
+            <option>Large</option>
+          </select><br/><br/>
+
           <label>Bicycle Colour: </label><br/>
           <input type='text' value={this.state.colour} name='colour' onChange={this.handleChange}></input><br/><br/>
+
           <label>Price: </label><br/>
           <input type='text' value={this.state.price} name='price' onChange={this.handleChange}></input><br/><br/>
-          <input type='submit' value='Create Listing'></input>
+
+          <label>Country: </label><br/>
+          <select></select><br/><br/>
+
+          <label>City: </label><br/>
+          <select></select><br/><br/>
+
+          <label>Neighbourhood: </label><br/>
+          <select></select><br/><br/>
+
+          <input type='submit' value='Publish Listing'></input>
         </form>
       </div>
     )
