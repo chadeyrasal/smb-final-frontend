@@ -3,11 +3,11 @@ import {connect} from 'react-redux';
 import {updateLoginForm} from '../actions/updateLoginForm'
 import {login} from '../actions/login';
 
-const LoginForm = ({loginForm, updateLoginForm, login}) => {
+const LoginForm = ({loginFormData, updateLoginForm, login}) => {
   const handleChange = event => {
     const {name, value} = event.target;
     const updatedFormInfo = {
-      ...loginForm,
+      ...loginFormData,
       [name]: value
     };
     updateLoginForm(updatedFormInfo);
@@ -15,15 +15,15 @@ const LoginForm = ({loginForm, updateLoginForm, login}) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    login(loginForm);
+    login(loginFormData);
   }
 
   return (
     <form onSubmit={handleSubmit}>
       <label>Email address: </label><br/>
-      <input type='email' name='email' value={loginForm.email} onChange={handleChange} /><br/><br/>
+      <input type='email' name='email' value={loginFormData.email} onChange={handleChange} /><br/><br/>
       <label>Password: </label><br/>
-      <input type='password' name='password' value={loginForm.password} onChange={handleChange} /><br/><br/>
+      <input type='password' name='password' value={loginFormData.password} onChange={handleChange} /><br/><br/>
       <input type='submit' value='Log In'/><br/>
     </form>
   )
@@ -32,7 +32,7 @@ const LoginForm = ({loginForm, updateLoginForm, login}) => {
 //this gives me an argument comins to this compoennt: {email: '...', password: '...'}
 const mapStateToProps = state => {
   return {
-    loginForm: state.login
+    loginFormData: state.login
   }
 }
 
