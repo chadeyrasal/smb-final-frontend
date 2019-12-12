@@ -6,11 +6,13 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import cityReducer from './reducers/cityReducer';
 import userReducer from './reducers/userReducer';
+import currentUserReducer from './reducers/currentUserReducer';
 
 import App from './App';
 
 const reducer = combineReducers({
   users: userReducer,
+  currentUser: currentUserReducer,
   cities: cityReducer
 })
 
