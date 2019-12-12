@@ -7,7 +7,7 @@ import CityPage from '../components/CityPage';
 
 class CitiesContainer extends React.Component {
   componentDidMount() {
-    this.props.fetchCities()
+  //  this.props.fetchCities()
   }
 
   render() {
