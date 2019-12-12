@@ -7,13 +7,15 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import cityReducer from './reducers/cityReducer';
 import userReducer from './reducers/userReducer';
 import currentUserReducer from './reducers/currentUserReducer';
+import loginReducer from './reducers/loginReducer';
 
 import App from './App';
 
 const reducer = combineReducers({
   users: userReducer,
   currentUser: currentUserReducer,
-  cities: cityReducer
+  cities: cityReducer,
+  login: loginReducer
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
