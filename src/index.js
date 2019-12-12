@@ -1,18 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk'; // for async redux
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import cityReducer from './reducers/cityReducer';
+import userReducer from './reducers/userReducer';
 
 import App from './App';
+
+const reducer = combineReducers({
+  users: userReducer,
+  cities: cityReducer
+})
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 // the store is where you store your data globally;
 // the store can be created in another file and then imported into index.js
-let store = createStore(cityReducer, composeEnhancers(applyMiddleware(thunk)));
+let store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
 
 // the reducer will tell us what to do with our store based on certain actions;
 // we send an action object to our reducer and the reducer is responsible for taking in that action object
