@@ -1,10 +1,11 @@
-import {setCurrentUser} from './setCurrentUser'
+import {setCurrentUser} from './setCurrentUser';
 
 // asynchronous action creator
 // will return a function
 export const login = credentials => {
   return (dispatch) => {
     fetch('http://localhost:3000/api/v1/login', {
+      credentials: 'include',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
