@@ -7,8 +7,13 @@ import NeighbourhoodsContainer from './containers/NeighbourhoodsContainer';
 import TripsContainer from './containers/TripsContainer';
 import UsersContainer from './containers/UsersContainer';
 import LoginForm from './components/LoginForm';
+import {getCurrentUser} from './actions/getCurrentUser';
 
 class App extends React.Component {
+  componentDidMount() {
+    this.props.getCurrentUser()
+  }
+
   render() {
     return (
       <div className="App">
@@ -20,4 +25,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default connect(null, {getCurrentUser})(App);
