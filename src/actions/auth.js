@@ -5,6 +5,12 @@ export const updateLoginForm = (formData) => {
   }
 }
 
+export const resetLoginForm = () => {
+  return {
+    type: 'RESET_LOGIN_FORM'
+  }
+}
+
 export const setCurrentUser = user => {
   return {
     type: 'SET_CURRENT_USER',
@@ -28,6 +34,7 @@ export const login = credentials => {
           alert(user.error)
         } else {
           dispatch(setCurrentUser(user))
+          dispatch(resetLoginForm())
         }
       })
       .catch(console.log)
