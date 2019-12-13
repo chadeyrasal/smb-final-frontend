@@ -1,9 +1,8 @@
 import React from 'react';
-import {Redirect} from 'react-router-dom';
 import NeighbourhoodsContainer from '../containers/NeighbourhoodsContainer';
 
 const CityPage = (props) => {
-  let city = props.cities.filter(city => city.id == props.match.params.id)[0]
+  let city = props.cities.filter(city => city.id === parseInt(props.match.params.id))[0]
 
   return (
     <div>
