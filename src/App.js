@@ -2,13 +2,9 @@ import React from 'react';
 import {connect} from 'react-redux';
 import CitiesContainer from './containers/CitiesContainer';
 import BicyclesContainer from './containers/BicyclesContainer';
-import CountriesContainer from './containers/CountriesContainer';
-import NeighbourhoodsContainer from './containers/NeighbourhoodsContainer';
-import TripsContainer from './containers/TripsContainer';
-import UsersContainer from './containers/UsersContainer';
-import LoginForm from './components/LoginForm';
 import {getCurrentUser} from './actions/getCurrentUser';
-import Logout from './components/Logout';
+import NavBarLoggedIn from './components/NavBarLoggedIn';
+import NavBarLoggedOut from './components/NavBarLoggedOut';
 
 class App extends React.Component {
   componentDidMount() {
@@ -18,9 +14,14 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        {this.props.currentUser ? <Logout /> : <LoginForm />}
+
+
+        {this.props.currentUser ? <NavBarLoggedIn /> : <NavBarLoggedOut />}
+
         <CitiesContainer />
         <BicyclesContainer />
+
+        {/*<Footer />*/}
       </div>
     );
   }
