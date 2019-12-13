@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import CitiesContainer from './containers/CitiesContainer';
 import BicyclesContainer from './containers/BicyclesContainer';
-import {getCurrentUser} from './actions/getCurrentUser';
+import {getCurrentUser} from './actions/auth';
 import NavBarLoggedIn from './components/NavBarLoggedIn';
 import NavBarLoggedOut from './components/NavBarLoggedOut';
 
