@@ -8,6 +8,7 @@ import TripsContainer from './containers/TripsContainer';
 import UsersContainer from './containers/UsersContainer';
 import LoginForm from './components/LoginForm';
 import {getCurrentUser} from './actions/getCurrentUser';
+import Logout from './components/Logout';
 
 class App extends React.Component {
   componentDidMount() {
@@ -17,7 +18,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <LoginForm />
+        {this.props.currentUser ? <Logout /> : <LoginForm />}
         <CitiesContainer />
         <BicyclesContainer />
       </div>
@@ -25,4 +26,10 @@ class App extends React.Component {
   }
 }
 
-export default connect(null, {getCurrentUser})(App);
+const mapStateToProps = state => {
+  return {
+    currentUser: state.currentUser
+  }
+}
+
+export default connect(mapStateToProps, {getCurrentUser})(App);
