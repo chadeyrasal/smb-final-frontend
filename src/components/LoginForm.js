@@ -20,7 +20,7 @@ const LoginForm = ({loginFormData, updateLoginForm, login}) => {
   }
 
   return (
-    <Container className='formConatiner'>
+    <Container>
       <Form onSubmit={handleSubmit}>
         <Form.Field>
           <label>Email address: </label><br/>
