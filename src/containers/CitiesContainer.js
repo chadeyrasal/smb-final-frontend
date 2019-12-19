@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Route} from 'react-router-dom'
+import {Route} from 'react-router-dom';
 import CitiesList from '../components/CitiesList';
 import {fetchCities} from '../actions/fetchCities';
 import CityPage from '../components/CityPage';
