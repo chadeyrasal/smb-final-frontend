@@ -6,7 +6,6 @@ class NavBarLoggedIn extends React.Component {
 
   handleItemClick = (event, { name }) => {
     this.setState({ activeItem: name })
-    {/*send to appropriate route according to name*/}
   }
 
   render() {
