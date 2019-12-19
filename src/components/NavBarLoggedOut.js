@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Input, Menu, Segment } from 'semantic-ui-react';
 
 class NavBarLoggedOut extends React.Component {
@@ -6,7 +7,6 @@ class NavBarLoggedOut extends React.Component {
 
   handleItemClick = (event, { name }) => {
     this.setState({ activeItem: name })
-    {/*send to appropriate route according to name*/}
   }
 
   render() {
@@ -20,8 +20,17 @@ class NavBarLoggedOut extends React.Component {
             <Input icon='search' placeholder='Search cities...' />
           </Menu.Item>
           <Menu.Menu position='right'>
-            <Menu.Item name='log in' active={activeItem === 'log in'} onClick={this.handleItemClick} />
-            <Menu.Item name='sign up' active={activeItem === 'sign up'} onClick={this.handleItemClick} />
+            <Menu.Item
+              as={Link}
+              to='/login'
+              name='login'
+              active={activeItem === 'login'}
+              onClick={this.handleItemClick}>
+              Log In
+            </Menu.Item>
+            <Menu.Item name='signup' active={activeItem === 'signup'} onClick={this.handleItemClick}>
+              Sign Up
+            </Menu.Item>
           </Menu.Menu>
         </Menu>
       </Segment>
