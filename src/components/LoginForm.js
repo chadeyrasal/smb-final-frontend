@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { updateLoginForm } from '../actions/auth'
+import { updateLoginForm } from '../actions/auth';
 import { login } from '../actions/auth';
+import { Form, Button, Container } from 'semantic-ui-react';
 
 const LoginForm = ({loginFormData, updateLoginForm, login}) => {
   const handleChange = event => {
@@ -19,13 +20,19 @@ const LoginForm = ({loginFormData, updateLoginForm, login}) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>Email address: </label><br/>
-      <input type='email' name='email' value={loginFormData.email} onChange={handleChange} /><br/><br/>
-      <label>Password: </label><br/>
-      <input type='password' name='password' value={loginFormData.password} onChange={handleChange} /><br/><br/>
-      <input type='submit' value='Log In'/><br/>
-    </form>
+    <Container>
+      <Form onSubmit={handleSubmit}>
+        <Form.Field>
+          <label>Email address: </label><br/>
+          <input type='email' name='email' value={loginFormData.email} onChange={handleChange} />
+        </Form.Field>
+        <Form.Field>
+          <label>Password: </label><br/>
+          <input type='password' name='password' value={loginFormData.password} onChange={handleChange} />
+        </Form.Field>
+        <Button type='submit'>Log In</Button>
+      </Form>
+    </Container>
   )
 }
 
