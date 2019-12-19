@@ -1,10 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import CitiesContainer from './containers/CitiesContainer';
-import BicyclesContainer from './containers/BicyclesContainer';
 import {getCurrentUser} from './actions/auth';
 import NavBarLoggedIn from './components/NavBarLoggedIn';
 import NavBarLoggedOut from './components/NavBarLoggedOut';
+import LoginForm from './components/LoginForm';
+import { Route } from 'react-router-dom';
 
 class App extends React.Component {
   componentDidMount() {
@@ -14,12 +14,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-
-
         {this.props.currentUser ? <NavBarLoggedIn /> : <NavBarLoggedOut />}
-
-        <CitiesContainer />
-        <BicyclesContainer />
+        <Route path='/login' component={LoginForm} />
 
         {/*<Footer />*/}
       </div>
