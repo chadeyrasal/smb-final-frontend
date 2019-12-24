@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Button, Container, Segment } from 'semantic-ui-react';
+import { Form, Button, Container, Segment, Divider } from 'semantic-ui-react';
 
 const SignUpForm = () => {
 
@@ -23,7 +23,9 @@ const SignUpForm = () => {
             <Button type='submit' color='olive' style={{textAlign: 'center'}}>Sign Up</Button>
           </Segment>
         </Form>
-      </Container>
+      </Container><br />
+
+      <Divider horizontal>Or</Divider><br /><br />
     </div>
   )
 }
