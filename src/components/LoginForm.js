@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { updateLoginForm } from '../actions/auth';
 import { login } from '../actions/auth';
-import { Form, Button, Container } from 'semantic-ui-react';
+import { Form, Button, Container, Segment } from 'semantic-ui-react';
 
 const LoginForm = ({loginFormData, updateLoginForm, login}) => {
   const handleChange = event => {
@@ -31,7 +31,9 @@ const LoginForm = ({loginFormData, updateLoginForm, login}) => {
             <label>Password: </label><br/>
             <input type='password' name='password' value={loginFormData.password} onChange={handleChange} />
           </Form.Field>
-          <Button type='submit'>Log In</Button>
+          <Segment basic textAlign={"center"}>
+            <Button type='submit' style={{textAlign: "center"}}>Log In</Button>
+          </Segment>
         </Form>
       </Container>
     </div>
