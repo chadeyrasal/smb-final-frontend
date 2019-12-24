@@ -20,19 +20,21 @@ const LoginForm = ({loginFormData, updateLoginForm, login}) => {
   }
 
   return (
-    <Container>
-      <Form onSubmit={handleSubmit}>
-        <Form.Field>
-          <label>Email address: </label><br/>
-          <input type='email' name='email' value={loginFormData.email} onChange={handleChange} />
-        </Form.Field>
-        <Form.Field>
-          <label>Password: </label><br/>
-          <input type='password' name='password' value={loginFormData.password} onChange={handleChange} />
-        </Form.Field>
-        <Button type='submit'>Log In</Button>
-      </Form>
-    </Container>
+    <div className='form-wrapper'>
+      <Container>
+        <Form onSubmit={handleSubmit}>
+          <Form.Field>
+            <label>Email address: </label><br/>
+            <input type='email' name='email' value={loginFormData.email} onChange={handleChange} />
+          </Form.Field>
+          <Form.Field>
+            <label>Password: </label><br/>
+            <input type='password' name='password' value={loginFormData.password} onChange={handleChange} />
+          </Form.Field>
+          <Button type='submit'>Log In</Button>
+        </Form>
+      </Container>
+    </div>
   )
 }
 
