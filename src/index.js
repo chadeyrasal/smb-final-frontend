@@ -8,6 +8,7 @@ import cityReducer from './reducers/cityReducer';
 import userReducer from './reducers/userReducer';
 import currentUserReducer from './reducers/currentUserReducer';
 import loginReducer from './reducers/loginReducer';
+import signupReducer from './reducers/signupReducer';
 
 import App from './App';
 
@@ -15,7 +16,7 @@ const reducer = combineReducers({
   users: userReducer,
   currentUser: currentUserReducer,
   cities: cityReducer,
-  login: loginReducer, 
+  login: loginReducer,
   signup: signupReducer
 })
 
