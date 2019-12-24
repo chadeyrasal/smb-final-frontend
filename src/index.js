@@ -15,7 +15,8 @@ const reducer = combineReducers({
   users: userReducer,
   currentUser: currentUserReducer,
   cities: cityReducer,
-  login: loginReducer
+  login: loginReducer, 
+  signup: signupReducer
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
