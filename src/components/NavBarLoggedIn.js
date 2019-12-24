@@ -23,7 +23,7 @@ class NavBarLoggedIn extends React.Component {
             <Menu.Item as={Link} to='/cities' name='cities' active={activeItem === 'cities'} onClick={this.handleItemClick}>Cities</Menu.Item>
             <Menu.Item as={Link} to='/bicycles/new' name='bicycles/new' active={activeItem === 'bicycles/new'} onClick={this.handleItemClick}>List Your Bicycle</Menu.Item>
             <Menu.Item as={Link} to='/trips' name='trips' active={activeItem === 'trips'} onClick={this.handleItemClick}>Your Trips</Menu.Item>
-            <Dropdown item simple text='Account' direction='right'options={
+            <Dropdown item simple text='Account' direction='right' options={
               [
                 { key: 'account', text: 'Your Account', as: Link, to: '/users/:id' },
                 { key: 'profile', text: 'Public Profile', as: Link, to: '/users/:id/profile' },
