@@ -19,7 +19,7 @@ const SignUpForm = () => {
             <label>Password: </label><br/>
             <input type='password' name='password' />
           </Form.Field>
-          <Button type='submit' color='olive'>Log In</Button>
+          <Button type='submit' color='olive'>Sign Up</Button>
         </Form>
       </Container>
     </div>
