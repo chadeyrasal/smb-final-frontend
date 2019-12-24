@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { updateLoginForm } from '../actions/auth';
 import { login } from '../actions/auth';
-import { Form, Button, Container, Segment } from 'semantic-ui-react';
+import { Form, Button, Container, Segment, Divider } from 'semantic-ui-react';
 
 const LoginForm = ({loginFormData, updateLoginForm, login}) => {
   const handleChange = event => {
@@ -37,7 +37,7 @@ const LoginForm = ({loginFormData, updateLoginForm, login}) => {
         </Form>
       </Container><br />
 
-
+      <Divider horizontal>Or</Divider><br /><br />
     </div>
   )
 }
