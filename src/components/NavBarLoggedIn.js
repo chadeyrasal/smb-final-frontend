@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Input, Menu, Segment } from 'semantic-ui-react';
 
 class NavBarLoggedIn extends React.Component {
@@ -14,14 +15,14 @@ class NavBarLoggedIn extends React.Component {
     return(
       <Segment>
         <Menu secondary>
-          <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick}>Home</Menu.Item>
+          <Menu.Item as={Link} to='/' name='home' active={activeItem === 'home'} onClick={this.handleItemClick}>Home</Menu.Item>
           <Menu.Item>
             <Input icon='search' placeholder='Search cities...' />
           </Menu.Item>
           <Menu.Menu position='right'>
-            <Menu.Item name='cities' active={activeItem === 'cities'} onClick={this.handleItemClick}>Cities</Menu.Item>
-            <Menu.Item name='bicycles/new' active={activeItem === 'bicycles/new'} onClick={this.handleItemClick}>List Your Bicycle</Menu.Item>
-            <Menu.Item name='trips' active={activeItem === 'trips'} onClick={this.handleItemClick}>Your Trips</Menu.Item>
+            <Menu.Item as={Link} to='/cities' name='cities' active={activeItem === 'cities'} onClick={this.handleItemClick}>Cities</Menu.Item>
+            <Menu.Item as={Link} to='/bicycles/new' name='bicycles/new' active={activeItem === 'bicycles/new'} onClick={this.handleItemClick}>List Your Bicycle</Menu.Item>
+            <Menu.Item as={Link} to='/trips' name='trips' active={activeItem === 'trips'} onClick={this.handleItemClick}>Your Trips</Menu.Item>
           </Menu.Menu>
         </Menu>
       </Segment>
