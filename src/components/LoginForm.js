@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { updateLoginForm } from '../actions/auth';
 import { login } from '../actions/auth';
 import { Form, Button, Container, Segment, Divider } from 'semantic-ui-react';
@@ -39,7 +40,7 @@ const LoginForm = ({loginFormData, updateLoginForm, login}) => {
 
       <Divider horizontal>Or</Divider><br /><br />
 
-      <Button fluid basic color='grey'>Sign Up</Button>
+      <Button fluid basic color='grey' as={Link} to='/signup'>Sign Up</Button>
     </div>
   )
 }
