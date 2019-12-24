@@ -4,6 +4,7 @@ import {getCurrentUser} from './actions/auth';
 import NavBarLoggedIn from './components/NavBarLoggedIn';
 import NavBarLoggedOut from './components/NavBarLoggedOut';
 import LoginForm from './components/LoginForm';
+import SignUpForm from './components/SignUpForm';
 import { Route } from 'react-router-dom';
 
 class App extends React.Component {
