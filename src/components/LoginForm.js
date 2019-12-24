@@ -32,10 +32,12 @@ const LoginForm = ({loginFormData, updateLoginForm, login}) => {
             <input type='password' name='password' value={loginFormData.password} onChange={handleChange} />
           </Form.Field>
           <Segment basic textAlign={"center"}>
-            <Button type='submit' style={{textAlign: "center"}}>Log In</Button>
+            <Button type='submit' color='olive' style={{textAlign: "center"}}>Log In</Button>
           </Segment>
         </Form>
-      </Container>
+      </Container><br />
+
+
     </div>
   )
 }
