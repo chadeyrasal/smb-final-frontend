@@ -26,6 +26,8 @@ const SignUpForm = () => {
       </Container><br />
 
       <Divider horizontal>Or</Divider><br /><br />
+
+      <Button fluid basic color='grey'>Log In</Button>
     </div>
   )
 }
