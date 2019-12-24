@@ -38,6 +38,8 @@ const LoginForm = ({loginFormData, updateLoginForm, login}) => {
       </Container><br />
 
       <Divider horizontal>Or</Divider><br /><br />
+
+      <Button fluid basic color='grey'>Sign Up</Button>
     </div>
   )
 }
