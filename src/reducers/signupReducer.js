@@ -4,7 +4,7 @@ const initialState = {
   password: ''
 }
 
-export default function signupReducer(state = initialSate, action) {
+export default function signupReducer(state = initialState, action) {
   switch (action.type) {
     default:
       return state
