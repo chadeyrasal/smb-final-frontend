@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Form, Button, Container, Segment, Divider } from 'semantic-ui-react';
 
 const SignUpForm = () => {
@@ -27,7 +28,7 @@ const SignUpForm = () => {
 
       <Divider horizontal>Or</Divider><br /><br />
 
-      <Button fluid basic color='grey'>Log In</Button>
+      <Button fluid basic color='grey' as={Link} to='/login'>Log In</Button>
     </div>
   )
 }
