@@ -16,6 +16,7 @@ class App extends React.Component {
       <div className="App">
         {this.props.currentUser ? <NavBarLoggedIn /> : <NavBarLoggedOut />}
         <Route path='/login' component={LoginForm} />
+        <Route path='/signup' component={SignUpForm} />
 
         {/*<Footer />*/}
       </div>
