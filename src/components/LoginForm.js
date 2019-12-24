@@ -31,8 +31,8 @@ const LoginForm = ({loginFormData, updateLoginForm, login}) => {
             <label>Password: </label><br/>
             <input type='password' name='password' value={loginFormData.password} onChange={handleChange} />
           </Form.Field>
-          <Segment basic textAlign={"center"}>
-            <Button type='submit' color='olive' style={{textAlign: "center"}}>Log In</Button>
+          <Segment basic textAlign={'center'}>
+            <Button type='submit' color='olive' style={{textAlign: 'center'}}>Log In</Button>
           </Segment>
         </Form>
       </Container><br />
