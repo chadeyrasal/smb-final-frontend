@@ -5,6 +5,8 @@ import NavBarLoggedIn from './components/NavBarLoggedIn';
 import NavBarLoggedOut from './components/NavBarLoggedOut';
 import LoginForm from './components/LoginForm';
 import SignUpForm from './components/SignUpForm';
+import FooterLoggedIn from './components/FooterLoggedIn';
+import FooterLoggedOut from './components/FooterLoggedOut';
 import { Route } from 'react-router-dom';
 
 class App extends React.Component {
@@ -16,10 +18,11 @@ class App extends React.Component {
     return (
       <div className="App">
         {this.props.currentUser ? <NavBarLoggedIn /> : <NavBarLoggedOut />}
+
         <Route path='/login' component={LoginForm} />
         <Route path='/signup' component={SignUpForm} />
 
-        {/*<Footer />*/}
+        {this.props.current ? <FooterLoggedIn /> : <FooterLoggedOut />}
       </div>
     );
   }
