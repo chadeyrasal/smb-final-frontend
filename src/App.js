@@ -22,7 +22,7 @@ class App extends React.Component {
         <Route path='/login' component={LoginForm} />
         <Route path='/signup' component={SignUpForm} />
 
-        {this.props.current ? <FooterLoggedIn /> : <FooterLoggedOut />}
+        {this.props.currentUser ? <FooterLoggedIn /> : <FooterLoggedOut />}
       </div>
     );
   }
