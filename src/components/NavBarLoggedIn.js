@@ -22,12 +22,13 @@ class NavBarLoggedIn extends React.Component {
           <Menu.Menu position='right'>
             <Menu.Item as={Link} to='/cities' name='cities' active={activeItem === 'cities'} onClick={this.handleItemClick}>Cities</Menu.Item>
             <Menu.Item as={Link} to='/bicycles/new' name='bicycles/new' active={activeItem === 'bicycles/new'} onClick={this.handleItemClick}>List Your Bicycle</Menu.Item>
-            <Menu.Item as={Link} to='/trips' name='trips' active={activeItem === 'trips'} onClick={this.handleItemClick}>Your Trips</Menu.Item>
+            <Menu.Item as={Link} to='/users/:id/trips' name='trips' active={activeItem === 'trips'} onClick={this.handleItemClick}>Your Trips</Menu.Item>
             <Dropdown item simple text='Account' direction='right' options={
               [
-                { key: 'account', text: 'Your Account', as: Link, to: '/users/:id' },
                 { key: 'profile', text: 'Public Profile', as: Link, to: '/users/:id/profile' },
-                { key: 'logout', text: 'Logout', icon: 'sign out' }
+                { key: 'account', text: 'Your Account', as: Link, to: '/users/:id' },
+                { key: 'bicycles', text: 'Your Bicycles', as: Link, to: '/users/:id/bicycles' },
+                { key: 'trips', text: 'Your Trips', as: Link, to: '/users/:id/trips' }
               ]
             } />
           </Menu.Menu>
