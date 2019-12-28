@@ -9,20 +9,15 @@ const MapChart = () => {
       <Geographies geography={geoUrl}>
         {({ geographies }) =>
           geographies
-            .filter(d => d.properties.REGION_UN !== 'Antarctica')
+            .filter(d => d.properties.REGION_UN !== "Antarctica")
             .map(geo => (
-              { geo.properties.NAME === 'France' ? <Geography
+              <Geography
                 key={geo.rsmKey}
                 geography={geo}
-                fill='#F54'
-                stroke='#D6D6DA'
-              /> : <Geography
-                key={geo.rsmKey}
-                geography={geo}
-                fill='#EAEAEC'
-                stroke='#D6D6DA'
-              />}
-          ))
+                fill="#EAEAEC"
+                stroke="#D6D6DA"
+              />
+            ))
         }
       </Geographies>
     </ComposableMap>
