@@ -11,12 +11,17 @@ const MapChart = () => {
           geographies
             .filter(d => d.properties.REGION_UN !== 'Antarctica')
             .map(geo => (
-              <Geography
+              { geo.properties.NAME === 'France' ? <Geography
                 key={geo.rsmKey}
                 geography={geo}
-                fill="#EAEAEC"
-                stroke="#D6D6DA"
-              />
+                fill='#F54'
+                stroke='#D6D6DA'
+              /> : <Geography
+                key={geo.rsmKey}
+                geography={geo}
+                fill='#EAEAEC'
+                stroke='#D6D6DA'
+              />}
           ))
         }
       </Geographies>
