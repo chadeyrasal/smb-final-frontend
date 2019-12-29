@@ -7,9 +7,8 @@ import LoginForm from './components/LoginForm';
 import SignUpForm from './components/SignUpForm';
 import FooterLoggedIn from './components/FooterLoggedIn';
 import FooterLoggedOut from './components/FooterLoggedOut';
-import MapChart from './components/MapChart';
+import HomeContainer from './containers/HomeContainer';
 import { Route } from 'react-router-dom';
-import { Container } from 'semantic-ui-react';
 
 class App extends React.Component {
   componentDidMount() {
@@ -23,8 +22,7 @@ class App extends React.Component {
 
         <Route path='/login' component={LoginForm} />
         <Route path='/signup' component={SignUpForm} />
-
-        <Container><MapChart /></Container>
+        <Route exact path='/' component={HomeContainer} />
 
         {this.props.currentUser ? <FooterLoggedIn /> : <FooterLoggedOut />}
       </div>
