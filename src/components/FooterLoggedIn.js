@@ -11,6 +11,7 @@ const FooterLoggedIn = ({currentUser}) => {
         <Button size='mini' basic color='black' style={{textAlign: 'center'}}>Log Out</Button>
         <Divider />
         <p><Link className='footer-para' to='/about'>About Share My Bike</Link></p>
+        <p>{'\u00a9'} Share My Bike 2019. All rights reserved</p>
       </Segment>
     </div>
   )
