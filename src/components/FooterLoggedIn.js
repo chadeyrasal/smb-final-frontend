@@ -8,7 +8,7 @@ const FooterLoggedIn = ({currentUser}) => {
   return (
     <div>
       <Segment attached='bottom' textAlign={'center'} secondary>
-        <h5>You are logged in as <Link to={`/users/${currentUser.id}`}>{currentUser.fullname}</Link> {'\u00b7'} <LogOut /></h5>
+        <h5>You are logged in as <Link className='footer-para' to={`/users/${currentUser.id}`}>{currentUser.fullname}</Link> {'\u00b7'} <LogOut /></h5>
         <Divider />
         <p><Link className='footer-para' to='/about'>About Share My Bike</Link></p>
         <p>{'\u00a9'} Share My Bike 2019. All rights reserved</p>
