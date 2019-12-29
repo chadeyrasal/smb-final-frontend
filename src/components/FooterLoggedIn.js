@@ -9,7 +9,7 @@ const FooterLoggedIn = ({currentUser}) => {
       <Segment attached='bottom' textAlign={'center'} secondary>
         <h5>You are logged in as <Link to={`/users/${currentUser.id}`}>{currentUser.fullname}</Link></h5>
         <Button size='mini' basic color='black' style={{textAlign: 'center'}}>Log Out</Button>
-        
+        <p><Link className='footer-para' to='/about'>About Share My Bike</Link></p>
       </Segment>
     </div>
   )
