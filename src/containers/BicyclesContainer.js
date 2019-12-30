@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 class BicyclesContainer extends React.Component {
   componentDidMount() {
-    //this.props.fetchCityBicycles()
+    //this.props.fetchBicycles()
   }
 
   render() {
