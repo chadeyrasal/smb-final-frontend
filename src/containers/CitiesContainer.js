@@ -17,7 +17,7 @@ class CitiesContainer extends React.Component {
       <div>
         <Route exact path='/cities' render={() => <CitiesList cities={this.props.cities} />} />
         <Route exact path='/cities/:id' render={(routerProps) => <CityPage {...routerProps} cities={this.props.cities} />}/>
-        <Route path='/cities/:id/bicycles' component={BicyclesList}/>
+        <Route path='/cities/:id/bicycles' render={(routerProps) => <BicyclesList {...routerProps} cities={this.props.cities} />}/>
         <Route path='/cities/:id/neighbourhoods' component={NeighbourhoodsList} />
       </div>
     )
