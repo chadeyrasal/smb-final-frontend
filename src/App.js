@@ -9,6 +9,7 @@ import FooterLoggedIn from './components/FooterLoggedIn';
 import FooterLoggedOut from './components/FooterLoggedOut';
 import HomeContainer from './containers/HomeContainer';
 import CitiesContainer from './containers/CitiesContainer';
+import BicyclesContainer from './containers/BicyclesContainer';
 import { Route } from 'react-router-dom';
 
 class App extends React.Component {
@@ -25,6 +26,7 @@ class App extends React.Component {
         <Route path='/signup' component={SignUpForm} />
         <Route exact path='/' component={HomeContainer} />
         <Route path='/cities' component={CitiesContainer} />
+        <Route path='/bicycles' component={BicyclesContainer} />
 
         {this.props.currentUser ? <FooterLoggedIn /> : <FooterLoggedOut />}
       </div>
