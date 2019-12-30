@@ -8,6 +8,7 @@ import SignUpForm from './components/SignUpForm';
 import FooterLoggedIn from './components/FooterLoggedIn';
 import FooterLoggedOut from './components/FooterLoggedOut';
 import HomeContainer from './containers/HomeContainer';
+import CitiesContainer from './containers/CitiesContainer';
 import { Route } from 'react-router-dom';
 
 class App extends React.Component {
@@ -23,6 +24,7 @@ class App extends React.Component {
         <Route path='/login' component={LoginForm} />
         <Route path='/signup' component={SignUpForm} />
         <Route exact path='/' component={HomeContainer} />
+        <Route exact path='/cities' component={CitiesContainer} />
 
         {this.props.currentUser ? <FooterLoggedIn /> : <FooterLoggedOut />}
       </div>
