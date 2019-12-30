@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { fetchBicycles } from '../actions/fetchBicycles';
 
 class BicyclesContainer extends React.Component {
   componentDidMount() {
-    //this.props.fetchBicycles()
+    this.props.fetchBicycles()
   }
 
   render() {
@@ -21,4 +22,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(BicyclesContainer);
+export default connect(mapStateToProps, {fetchBicycles})(BicyclesContainer);
