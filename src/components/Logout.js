@@ -5,7 +5,7 @@ import { Button } from 'semantic-ui-react';
 
 const Logout = ({logout}) => {
   return (
-    <Button onClick={logout}>Log Out</Button>
+    <Button compact onClick={logout}>Log Out</Button>
   )
 }
 
