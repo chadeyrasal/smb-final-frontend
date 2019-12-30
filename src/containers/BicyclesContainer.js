@@ -1,9 +1,5 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {Route, Switch} from 'react-router-dom';
-import CreateBicycleForm from '../components/CreateBicycleForm';
-import BicyclesList from '../components/BicyclesList';
-import {fetchCityBicycles} from '../actions/fetchCityBicycles';
+import { connect } from 'react-redux';
 
 class BicyclesContainer extends React.Component {
   componentDidMount() {
@@ -14,10 +10,6 @@ class BicyclesContainer extends React.Component {
     return (
       <div>
         BicyclesContainer
-        <Switch> {/* Switch chooses the first route that matches the path, so routes order matters */}
-          <Route path='/bicycles/new' component={CreateBicycleForm}></Route>
-        </Switch>
-        <BicyclesList/>
       </div>
     )
   }
@@ -29,4 +21,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, {fetchCityBicycles})(BicyclesContainer);
+export default connect(mapStateToProps)(BicyclesContainer);
