@@ -7,7 +7,7 @@ const CityPage = (props) => {
 
   if (city) {
     return (
-      <Container>
+      <Container textAlign={'center'}>
         <Card.Group>
           <Card>
             <Image src='https://react.semantic-ui.com/images/avatar/large/daniel.jpg' />
