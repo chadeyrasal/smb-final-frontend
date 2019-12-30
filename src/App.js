@@ -24,7 +24,7 @@ class App extends React.Component {
         <Route path='/login' component={LoginForm} />
         <Route path='/signup' component={SignUpForm} />
         <Route exact path='/' component={HomeContainer} />
-        <Route exact path='/cities' component={CitiesContainer} />
+        <Route path='/cities' component={CitiesContainer} />
 
         {this.props.currentUser ? <FooterLoggedIn /> : <FooterLoggedOut />}
       </div>
