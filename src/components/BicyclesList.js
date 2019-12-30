@@ -1,11 +1,39 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { Container, Card, Label, Icon, Image, Button, Segment } from 'semantic-ui-react';
 
 const BicyclesList = (props) => {
-  return (
-    <div>
-      BicyclesList
-    </div>
-  )
+  let city = props.cities.filter(city => city.id === parseInt(props.match.params.id))[0]
+
+  if (city) {
+    return (
+      <div>
+        <Container>
+          <Card.Group>
+            {city.bicycles.map(bicycle =>
+              <Card key={bicycle.id}>
+                <Card.Content>
+                  <Image floated='right' size='mini' src='https://react.semantic-ui.com/images/avatar/large/molly.png'/>
+                  <Card.Header>{bicycle.bicycle_type} <Label><Icon name='tag' /> £{bicycle.price}</Label></Card.Header>
+                  <Card.Meta>{bicycle.neighbourhood.name}, {city.name}</Card.Meta>
+                  <Card.Description>{bicycle.title}</Card.Description>
+                </Card.Content>
+                <Card.Content extra>
+                  <Segment basic textAlign={'center'}>
+                    <Button.Group vertical labeled icon basic>
+                      <Button as={Link} to={`/bicycles/${bicycle.id}`} icon='bicycle' content='See this bicycle' />
+                    </Button.Group>
+                  </Segment>
+                </Card.Content>
+              </Card>
+            )}
+          </Card.Group>
+        </Container>
+      </div>
+    )
+  } else {
+    return null
+  }
 }
 
 export default BicyclesList;
