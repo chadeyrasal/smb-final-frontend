@@ -6,7 +6,7 @@
 }
 
 .cards-wrapper {
-  padding: 25px 0px 35px 0px; 
+  padding: 25px 0px 35px 0px;
 }
 
 h5 {
@@ -17,4 +17,9 @@ h5 {
 
 .footer-para {
   color: inherit;
+}
+
+.bold-link {
+  color: inherit;
+  font-weight: bold;
 }
