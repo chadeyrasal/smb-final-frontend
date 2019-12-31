@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import NewTrip from './NewTrip';
 import { Container, Card, Grid, Segment, Button, Image, Divider } from 'semantic-ui-react';
 
 const BicyclePage = (props) => {
@@ -16,7 +15,6 @@ const BicyclePage = (props) => {
                 <Segment basic>
                   <Image src='https://react.semantic-ui.com/images/wireframe/image.png'/>
                   <Divider />
-                  <NewTrip />
                 </Segment>
               </Grid.Column>
 
