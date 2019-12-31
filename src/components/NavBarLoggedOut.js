@@ -15,7 +15,14 @@ class NavBarLoggedOut extends React.Component {
     return(
       <Segment>
         <Menu secondary>
-          <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick}>Home</Menu.Item>
+          <Menu.Item
+            as={Link}
+            to='/'
+            name='home'
+            active={activeItem === 'home'}
+            onClick={this.handleItemClick}>
+            Home
+          </Menu.Item>
           <Menu.Item>
             <Input icon='search' placeholder='Search cities...' />
           </Menu.Item>
@@ -28,7 +35,12 @@ class NavBarLoggedOut extends React.Component {
               onClick={this.handleItemClick}>
               Log In
             </Menu.Item>
-            <Menu.Item name='signup' active={activeItem === 'signup'} onClick={this.handleItemClick}>
+            <Menu.Item
+              as={Link}
+              to='/signup' 
+              name='signup'
+              active={activeItem === 'signup'}
+              onClick={this.handleItemClick}>
               Sign Up
             </Menu.Item>
           </Menu.Menu>
