@@ -15,7 +15,7 @@ const BicyclesList = (props) => {
                 <Card.Content>
                   <Image floated='right' size='mini' src='https://react.semantic-ui.com/images/avatar/large/molly.png'/>
                   <Card.Header>{bicycle.bicycle_type} <Label><Icon name='tag' /> £{bicycle.price}</Label></Card.Header>
-                  <Card.Meta>{bicycle.neighbourhood.name}, {city.name}</Card.Meta>
+                  <Card.Meta><Link to={`/neighbbourhoods/${bicycle.neighbourhood.id}`}>{bicycle.neighbourhood.name}</Link>- <Link to={`/cities/${city.id}`}>{city.name}</Link></Card.Meta>
                   <Card.Description>{bicycle.title}</Card.Description>
                 </Card.Content>
                 <Card.Content extra>
