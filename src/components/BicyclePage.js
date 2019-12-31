@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Card, Grid, Segment, Button, Image } from 'semantic-ui-react';
+import NewTrip from './NewTrip';
+import { Container, Card, Grid, Segment, Button, Image, Divider } from 'semantic-ui-react';
 
 const BicyclePage = (props) => {
   let bicycle = props.bicycles.filter(bicycle => bicycle.id === parseInt(props.match.params.id))[0]
@@ -14,6 +15,8 @@ const BicyclePage = (props) => {
               <Grid.Column>
                 <Segment basic>
                   <Image src='https://react.semantic-ui.com/images/wireframe/image.png'/>
+                  <Divider />
+                  <NewTrip />
                 </Segment>
               </Grid.Column>
 
