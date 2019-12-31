@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Card, Grid, Segment, Button, Image, Divider } from 'semantic-ui-react';
+import { Container, Card, Grid, Segment, Button, Image, Divider, Feed, Icon } from 'semantic-ui-react';
 
 const BicyclePage = (props) => {
   let bicycle = props.bicycles.filter(bicycle => bicycle.id === parseInt(props.match.params.id))[0]
@@ -15,7 +15,7 @@ const BicyclePage = (props) => {
                 <Segment basic textAlign={'center'}>
                   <Image src='https://react.semantic-ui.com/images/wireframe/image.png'/>
                   <Divider />
-                  <Button color='olive'>Book this bicycle</Button>
+                  <Button as={Link} to='/trips/new' color='olive'>Book this bicycle</Button>
                 </Segment>
               </Grid.Column>
 
@@ -54,7 +54,47 @@ const BicyclePage = (props) => {
 
               <Grid.Column>
                 <Segment basic>
+                  <Feed>
+                    <Feed.Event>
+                      <Feed.Label>
+                        <Image src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' />
+                      </Feed.Label>
+                      <Feed.Content>
+                        <Feed.Summary>
+                          <Feed.User>User Beta 1</Feed.User> added a review
+                          <Feed.Date>2 days ago</Feed.Date>
+                        </Feed.Summary>
+                        <Feed.Extra text>
+                          Great bike and great owner. Would recommend
+                        </Feed.Extra>
+                        <Feed.Meta>
+                          <Feed.Like>
+                            <Icon name='triangle up' /> 4 people found this review useful
+                          </Feed.Like>
+                        </Feed.Meta>
+                      </Feed.Content>
+                    </Feed.Event>
 
+                    <Feed.Event>
+                      <Feed.Label>
+                        <Image src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' />
+                      </Feed.Label>
+                      <Feed.Content>
+                        <Feed.Summary>
+                          <Feed.User>User Beta 2</Feed.User> added a review
+                          <Feed.Date>1 month ago</Feed.Date>
+                        </Feed.Summary>
+                        <Feed.Extra text>
+                          This is a great bicycle that I would recommend to anyone who plans on cycling for more than 20 minutes at a time
+                        </Feed.Extra>
+                        <Feed.Meta>
+                          <Feed.Like>
+                            <Icon name='triangle up' /> 7 people found this review useful
+                          </Feed.Like>
+                        </Feed.Meta>
+                      </Feed.Content>
+                    </Feed.Event>
+                  </Feed>
                 </Segment>
               </Grid.Column>
             </Grid.Row>
