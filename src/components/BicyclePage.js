@@ -12,9 +12,10 @@ const BicyclePage = (props) => {
           <Grid columns={3} divided>
             <Grid.Row stretched>
               <Grid.Column>
-                <Segment basic>
+                <Segment basic textAlign={'center'}>
                   <Image src='https://react.semantic-ui.com/images/wireframe/image.png'/>
                   <Divider />
+                  <Button color='olive'>Book this bicycle</Button>
                 </Segment>
               </Grid.Column>
 
