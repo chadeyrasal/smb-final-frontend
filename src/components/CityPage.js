@@ -38,7 +38,7 @@ const CityPage = (props) => {
                   <Card.Content>
                     <List divided relaxed>
                       {city.neighbourhoods.map(neighbourhood =>
-                        <List.Item>
+                        <List.Item key={neighbourhood.id}>
                           <List bulleted horizontal link>
                             <List.Item>{neighbourhood.name}</List.Item>
                             <List.Item as={Link} to={`/neighbourhoods/${neighbourhood.id}`}>See details</List.Item>
@@ -59,7 +59,7 @@ const CityPage = (props) => {
                   <Card.Content>
                     <List divided relaxed>
                       {city.bicycles.map(bicycle =>
-                        <List.Item>
+                        <List.Item key={bicycle.id}>
                           <List.Content>
                             <Card.Description>{bicycle.title}</Card.Description>
                             <List bulleted horizontal link>
