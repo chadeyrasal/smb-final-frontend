@@ -79,3 +79,43 @@ export const clearCurrentUser = () => {
     type: 'CLEAR_CURRENT_USER'
   }
 }
+
+export const updateSignupForm = formData => {
+  return {
+    type: 'UPDATE_SIGNUP_FORM',
+    payload: formData
+  }
+}
+
+export const resetSignupForm = () => {
+  return {
+    type: 'RESET_SIGNUP_FORM'
+  }
+}
+
+export const signup = (credentials, history) => {
+  return (dispatch) => {
+    const userInfo = {
+      user: credentials
+    }
+    return fetch('http://localhost:3000/api/v1/signup', {
+      credentials: 'include',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(userInfo)
+    })
+      .then(response => response.json())
+      .then(response => {
+        if (response.error) {
+          alert(response.error)
+        } else {
+          dispatch(setCurrentUser(response.data))
+          dispatch(resetSignupForm())
+          history.push('/')
+        }
+      })
+      .catch(console.log)
+  }
+}
