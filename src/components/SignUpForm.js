@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Form, Button, Container, Segment, Divider } from 'semantic-ui-react';
 
@@ -33,4 +34,10 @@ const SignUpForm = () => {
   )
 }
 
-export default SignUpForm;
+const mapStateToProps = (state) => {
+  return {
+    signupFormData: state.signup
+  }
+}
+
+export default connect(mapStateToProps)(SignUpForm);
