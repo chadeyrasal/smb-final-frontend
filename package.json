@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.4.1",
+    "classnames": "^2.2.6",
     "react": "^16.11.0",
     "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "^16.11.0",
@@ -11,9 +12,11 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.3.0",
     "react-simple-maps": "^1.0.0-beta.0",
+    "react-trip-date": "0.0.3",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
-    "semantic-ui-react": "^0.88.2"
+    "semantic-ui-react": "^0.88.2",
+    "styled-components": "^4.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
