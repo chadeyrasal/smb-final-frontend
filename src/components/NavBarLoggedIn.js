@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Input, Menu, Segment, Dropdown } from 'semantic-ui-react';
 
@@ -25,10 +26,10 @@ class NavBarLoggedIn extends React.Component {
             <Menu.Item as={Link} to='/users/:id/trips' name='trips' active={activeItem === 'trips'} onClick={this.handleItemClick}>Your Trips</Menu.Item>
             <Dropdown item simple text='Account' direction='right' options={
               [
-                { key: 'profile', text: 'Public Profile', as: Link, to: '/users/:id/profile' },
-                { key: 'account', text: 'Your Account', as: Link, to: '/users/:id' },
-                { key: 'bicycles', text: 'Your Bicycles', as: Link, to: '/users/:id/bicycles' },
-                { key: 'trips', text: 'Your Trips', as: Link, to: '/users/:id/trips' }
+                { key: 'profile', text: 'Public Profile', as: Link, to: `/users/${this.props.currentUser.id}/profile` },
+                { key: 'account', text: 'Your Account', as: Link, to: `/users/${this.props.currentUser.id}` },
+                { key: 'bicycles', text: 'Your Bicycles', as: Link, to: `/users/${this.props.currentUser.id}/bicycles` },
+                { key: 'trips', text: 'Your Trips', as: Link, to: `/users/${this.props.currentUser.id}/trips` }
               ]
             } />
           </Menu.Menu>
@@ -38,4 +39,10 @@ class NavBarLoggedIn extends React.Component {
   }
 }
 
-export default NavBarLoggedIn;
+const mapStateToProps = (state) => {
+  return {
+    currentUser: state.currentUser
+  }
+}
+
+export default connect(mapStateToProps)(NavBarLoggedIn);
