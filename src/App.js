@@ -11,6 +11,7 @@ import HomeContainer from './containers/HomeContainer';
 import CitiesContainer from './containers/CitiesContainer';
 import BicyclesContainer from './containers/BicyclesContainer';
 import { Route } from 'react-router-dom';
+import 'react-dates/initialize';
 
 class App extends React.Component {
   componentDidMount() {
