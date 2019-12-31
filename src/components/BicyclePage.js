@@ -1,5 +1,6 @@
 import React from 'react';
-import { Container, Card } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import { Container, Card, Grid, Segment, Button, Image } from 'semantic-ui-react';
 
 const BicyclePage = (props) => {
   let bicycle = props.bicycles.filter(bicycle => bicycle.id === parseInt(props.match.params.id))[0]
@@ -8,13 +9,54 @@ const BicyclePage = (props) => {
     return (
       <div>
         <Container>
-          <Card.Group>
-            <Card>
-              <Card.Content>
-                <Card.Header>{bicycle.title}</Card.Header>
-              </Card.Content>
-            </Card>
-          </Card.Group>
+          <Grid columns={3} divided>
+            <Grid.Row stretched>
+              <Grid.Column>
+                <Segment basic>
+                  <Image src='https://react.semantic-ui.com/images/wireframe/image.png'/>
+                </Segment>
+              </Grid.Column>
+
+              <Grid.Column>
+                <Segment basic>
+                  <Card>
+                    <Card.Content>
+                      <Card.Header>{bicycle.title}</Card.Header>
+                      <Card.Meta><Link to={`/neighbourhoods/${bicycle.neighbourhood.id}`}>{bicycle.neighbourhood.name}</Link>- <Link to={`/cities/${bicycle.neighbourhood.city.id}`}>{bicycle.neighbourhood.city.name}</Link></Card.Meta>
+                      <Card.Description>{bicycle.description}</Card.Description>
+                    </Card.Content>
+                    <Card.Content extra>
+                      <Segment basic textAlign={'center'}>
+                      <Button.Group basic vertical>
+                        <Button circular icon='setting'/>
+                        <Button circular icon='resize vertical'/>
+                        <Button circular icon='circle outline'/>
+                        <Button circular icon='tag'/>
+                      </Button.Group>
+                      <Button.Group basic vertical>
+                        <Button>{bicycle.bicycle_type}</Button>
+                        <Button>{bicycle.size}</Button>
+                        <Button>{bicycle.colour}</Button>
+                        <Button>£{bicycle.price}</Button>
+                      </Button.Group>
+                      </Segment>
+                    </Card.Content>
+                    <Card.Content extra>
+                      <Segment basic textAlign={'center'}>
+                        Owner: <Link to={`/users/${bicycle.owner.id}/profile`}>{bicycle.owner.fullname}</Link>
+                      </Segment>
+                    </Card.Content>
+                  </Card>
+                </Segment>
+              </Grid.Column>
+
+              <Grid.Column>
+                <Segment basic>
+
+                </Segment>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
         </Container>
       </div>
     )
