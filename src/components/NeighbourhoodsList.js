@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Card, Image, Segment, Button0 } from 'semantic-ui-react';
+import { Container, Card, Image, Segment, Button } from 'semantic-ui-react';
 
 const NeighbourhoodsList = (props) => {
   let city = props.cities.filter(city => city.id === parseInt(props.match.params.id))[0]
