@@ -20,7 +20,7 @@ const NeighbourhoodsList = (props) => {
                 <Card.Content extra>
                   <Segment basic textAlign={'center'}>
                     <Button.Group vertical labeled icon basic>
-                      <Button as={Link} to={`/neighbourhoods/${neighbourhood.id}/bicycles`} icon='bicycle' content='Sees all Bicycles' />
+                      <Button as={Link} to={`/neighbourhoods/${neighbourhood.id}`} icon='bicycle' content='Sees all Bicycles' />
                     </Button.Group>
                   </Segment>
                 </Card.Content>
