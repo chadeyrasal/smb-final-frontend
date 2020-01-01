@@ -12,6 +12,7 @@ import CitiesContainer from './containers/CitiesContainer';
 import BicyclesContainer from './containers/BicyclesContainer';
 import TripsContainer from './containers/TripsContainer';
 import NeighbourhoodsContainer from './containers/NeighbourhoodsContainer';
+import UsersContainer from './containers/UsersContainer';
 import { Route } from 'react-router-dom';
 
 class App extends React.Component {
@@ -31,6 +32,7 @@ class App extends React.Component {
         <Route path='/bicycles' component={BicyclesContainer} />
         <Route path='/trips' component={TripsContainer} />
         <Route path='/neighbourhoods/:id' component={NeighbourhoodsContainer} />
+        <Route path='/users' component={UsersContainer} />
 
         {this.props.currentUser ? <FooterLoggedIn /> : <FooterLoggedOut />}
       </div>
