@@ -1,6 +1,7 @@
 export const addTrip = (formData) => {
   return (dispatch) => {
     fetch('http://localhost:3000/api/v1/trips', {
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
