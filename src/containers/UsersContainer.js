@@ -14,7 +14,7 @@ class UsersContainer extends React.Component {
     return (
       <div>
         <Route exact path='/users/:id' component={UserPage} />
-        <Route path='/users/:id/profile' render={(routerProp) => <UserProfile {...routerProps} users={this.props.users}/>} />
+        <Route path='/users/:id/profile' render={(routerProps) => <UserProfile {...routerProps} users={this.props.users}/>} />
       </div>
     )
   }
