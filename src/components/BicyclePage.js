@@ -1,5 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import NewTrip from './NewTrip';
 import { Container, Card, Grid, Segment, Button, Image, Divider, Feed, Icon } from 'semantic-ui-react';
 
 const BicyclePage = (props) => {
@@ -15,7 +17,7 @@ const BicyclePage = (props) => {
                 <Segment basic textAlign={'center'}>
                   <Image src='https://react.semantic-ui.com/images/wireframe/image.png'/>
                   <Divider />
-                  <Button as={Link} to='/trips/new' color='olive'>Book this bicycle</Button>
+                  <NewTrip bicycle={bicycle} currentUser={props.currentUser}/>
                 </Segment>
               </Grid.Column>
 
@@ -107,4 +109,10 @@ const BicyclePage = (props) => {
   }
 }
 
-export default BicyclePage;
+const mapStateToProps = state => {
+  return {
+    currentUser: state.currentUser
+  }
+}
+
+export default connect(mapStateToProps)(BicyclePage);
