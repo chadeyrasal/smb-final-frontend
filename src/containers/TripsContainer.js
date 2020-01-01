@@ -1,10 +1,12 @@
 import React from 'react';
+import NewTrip from '../components/NewTrip';
+import { Route } from 'react-router-dom';
 
 class TripsContainer extends React.Component {
   render() {
     return (
       <div>
-        TripsContainer
+        <Route path='/trips/new' component={NewTrip}/>
       </div>
     )
   }
