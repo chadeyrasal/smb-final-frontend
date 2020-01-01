@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { addTrip } from '../actions/trips';
 import { Form, Segment, Button } from 'semantic-ui-react';
 
 class NewTrip extends React.Component {
@@ -11,6 +13,7 @@ class NewTrip extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault()
+    console.log(this.state)
   }
 
   render() {
@@ -31,7 +34,7 @@ class NewTrip extends React.Component {
         </Form>
       </div>
     )
-  };
+  }
 }
 
-export default NewTrip;
+export default connect(null, { addTrip })(NewTrip);
