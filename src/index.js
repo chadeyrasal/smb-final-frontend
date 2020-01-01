@@ -10,6 +10,7 @@ import currentUserReducer from './reducers/currentUserReducer';
 import loginReducer from './reducers/loginReducer';
 import signupReducer from './reducers/signupReducer';
 import bicycleReducer from './reducers/bicycleReducer';
+import tripReducer from './reducers/tripReducer';
 
 import App from './App';
 
@@ -19,7 +20,8 @@ const reducer = combineReducers({
   cities: cityReducer,
   login: loginReducer,
   signup: signupReducer,
-  bicycles: bicycleReducer
+  bicycles: bicycleReducer,
+  trips: tripReducer
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
