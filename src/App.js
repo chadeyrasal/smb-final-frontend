@@ -11,6 +11,7 @@ import HomeContainer from './containers/HomeContainer';
 import CitiesContainer from './containers/CitiesContainer';
 import BicyclesContainer from './containers/BicyclesContainer';
 import TripsContainer from './containers/TripsContainer';
+import NeighbourhoodsContainer from './containers/NeighbourhoodsContainer';
 import { Route } from 'react-router-dom';
 
 class App extends React.Component {
@@ -29,6 +30,7 @@ class App extends React.Component {
         <Route path='/cities' component={CitiesContainer} />
         <Route path='/bicycles' component={BicyclesContainer} />
         <Route path='/trips' component={TripsContainer} />
+        <Route path='/neighbourhoods/:id' component={NeighbourhoodsContainer} />
 
         {this.props.currentUser ? <FooterLoggedIn /> : <FooterLoggedOut />}
       </div>
