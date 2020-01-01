@@ -1,14 +1,27 @@
 import React from 'react';
-import NeighbourhoodsList from '../components/NeighbourhoodsList'
+import { connect } from 'react-redux';
+import { Route } from 'react-router-dom';
+import { fetchNeighbourhoods } from '../actions/neighbourhoods';
+import BicyclesListNeigh from '../components/BicyclesListNeigh';
 
 class NeighbourhoodsContainer extends React.Component {
+  componentDidMount() {
+    this.props.fetchNeighbourhoods()
+  }
+
   render() {
     return (
       <div>
-        <NeighbourhoodsList neighbourhoods={this.props.city && this.props.city.neighbourhoods}/>
+        <Route path='/neighbourhoods/:id/bicycles' render={(routerProps) => <BicyclesListNeigh {...routerProps} neighbourhoods={this.props.neighbourhoods} />} />
       </div>
     )
   }
 }
 
-export default NeighbourhoodsContainer;
+const mapStateToProps = state => {
+  return {
+    neighbourhoods: state.neighbourhoods
+  }
+}
+
+export default connect(mapStateToProps, { fetchNeighbourhoods })(NeighbourhoodsContainer);
