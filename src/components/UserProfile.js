@@ -30,6 +30,7 @@ const UserProfile = (props) => {
             </Grid.Column>
             <Grid.Column>
               <Segment basic>
+                <Header>{user.fullname}'s bicycles </Header>
                 {user.fullname}
               </Segment>
             </Grid.Column>
