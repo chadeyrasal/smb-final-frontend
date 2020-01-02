@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Grid, Segment, Image, Card } from 'semantic-ui-react';
+import { Container, Grid, Segment, Image, Card, Header } from 'semantic-ui-react';
 
 const UserProfile = (props) => {
   let user = props.users.filter(user => user.id === parseInt(props.match.params.id))[0]
@@ -24,6 +24,7 @@ const UserProfile = (props) => {
             </Grid.Column>
             <Grid.Column>
               <Segment basic>
+                <Header>About {user.fullname}</Header>
                 {user.description}
               </Segment>
             </Grid.Column>
