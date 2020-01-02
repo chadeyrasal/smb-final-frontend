@@ -14,6 +14,16 @@ const UserProfile = (props) => {
                 {user.fullname}
               </Segment>
             </Grid.Column>
+            <Grid.Column>
+              <Segment basic>
+                {user.fullname}
+              </Segment>
+            </Grid.Column>
+            <Grid.Column>
+              <Segment basic>
+                {user.fullname}
+              </Segment>
+            </Grid.Column>
           </Grid.Row>
         </Grid>
       </Container>
