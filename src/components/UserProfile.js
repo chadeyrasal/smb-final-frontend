@@ -1,8 +1,10 @@
 import React from 'react';
-import { Container, Grid, Segment, Card } from 'semantic-ui-react';
+import { Container, Grid, Segment } from 'semantic-ui-react';
 
 const UserProfile = (props) => {
   let user = props.users.filter(user => user.id === parseInt(props.match.params.id))[0]
+
+  console.log(user)
 
   if (user) {
     return (
@@ -16,7 +18,7 @@ const UserProfile = (props) => {
             </Grid.Column>
             <Grid.Column>
               <Segment basic>
-                {user.fullname}
+                {user.description}
               </Segment>
             </Grid.Column>
             <Grid.Column>
