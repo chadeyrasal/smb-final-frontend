@@ -1,9 +1,22 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 const UserPage = (props) => {
-  return (
-    <div>User Page for logged in Current User</div>
-  )
+  let user = props.currentUser
+
+  if (user) {
+    return (
+      <div>{user.fullname}</div>
+    )
+  } else {
+    return null
+  }
 }
 
-export default UserPage;
+const mapStateToProps = state => {
+  return {
+    currentUser: state.currentUser
+  }
+}
+
+export default connect(mapStateToProps)(UserPage);
