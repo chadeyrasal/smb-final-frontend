@@ -25,7 +25,8 @@ const UserProfile = (props) => {
             <Grid.Column>
               <Segment basic textAlign={'center'}>
                 <Header>About {user.fullname}</Header>
-                <Segment basic>{user.description}</Segment>
+                {user.description ? <Segment basic>{user.description}</Segment> : `There is no about me for ${user.fullname} yet`}
+
               </Segment>
             </Grid.Column>
             <Grid.Column>
