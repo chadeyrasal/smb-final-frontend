@@ -23,13 +23,13 @@ const UserProfile = (props) => {
               </Segment>
             </Grid.Column>
             <Grid.Column>
-              <Segment basic>
+              <Segment basic textAlign={'center'}>
                 <Header>About {user.fullname}</Header>
-                {user.description}
+                <Segment basic>{user.description}</Segment>
               </Segment>
             </Grid.Column>
             <Grid.Column>
-              <Segment basic>
+              <Segment basic textAlign={'center'}>
                 <Header>{user.fullname}'s bicycles </Header>
                 {user.fullname}
               </Segment>
