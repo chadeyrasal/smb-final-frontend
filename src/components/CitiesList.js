@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CityImage from '../images/city-landscape-at-night.jpg';
 import { Button, Card, Image, Segment, Container } from 'semantic-ui-react';
 
 const CitiesList = (props) => {
@@ -9,7 +10,7 @@ const CitiesList = (props) => {
         {props.cities.map(city =>
           <Card key={city.id}>
             <Card.Content>
-              <Image floated='right' size='tiny' src='https://react.semantic-ui.com/images/avatar/large/steve.jpg' />
+              <Image floated='right' size='tiny' src={CityImage} />
               <Card.Header><Link className='bold-link' to={`/cities/${city.id}`}>{city.name}</Link></Card.Header>
               <Card.Meta>{city.country.name}</Card.Meta>
               <Card.Description>
