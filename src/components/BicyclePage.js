@@ -64,7 +64,7 @@ const BicyclePage = (props) => {
                       </Feed.Label>
                       <Feed.Content>
                         <Feed.Summary>
-                          <Feed.User>User Beta 1</Feed.User> added a review
+                          <Feed.User>Elliot</Feed.User> added a review
                           <Feed.Date>2 days ago</Feed.Date>
                         </Feed.Summary>
                         <Feed.Extra text>
@@ -80,11 +80,11 @@ const BicyclePage = (props) => {
 
                     <Feed.Event>
                       <Feed.Label>
-                        <Image src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' />
+                        <Image src='https://react.semantic-ui.com/images/avatar/small/rachel.png' />
                       </Feed.Label>
                       <Feed.Content>
                         <Feed.Summary>
-                          <Feed.User>User Beta 2</Feed.User> added a review
+                          <Feed.User>Rachel</Feed.User> added a review
                           <Feed.Date>1 month ago</Feed.Date>
                         </Feed.Summary>
                         <Feed.Extra text>
