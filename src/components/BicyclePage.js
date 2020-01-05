@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import NewTrip from './NewTrip';
+import GreenBicycle from '../images/green-bike-by-water.jpg';
 import { Container, Card, Grid, Segment, Button, Image, Divider, Feed, Icon } from 'semantic-ui-react';
 
 const BicyclePage = (props) => {
@@ -15,7 +16,7 @@ const BicyclePage = (props) => {
             <Grid.Row stretched>
               <Grid.Column>
                 <Segment basic textAlign={'center'}>
-                  <Image src='https://react.semantic-ui.com/images/wireframe/image.png'/>
+                  <Image src={GreenBicycle}/>
                   <Divider />
                   <NewTrip bicycle={bicycle} currentUser={props.currentUser}/>
                 </Segment>
