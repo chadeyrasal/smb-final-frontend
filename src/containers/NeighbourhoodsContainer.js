@@ -12,7 +12,7 @@ class NeighbourhoodsContainer extends React.Component {
   render() {
     return (
       <div>
-        <Route path='/neighbourhoods/:id/bicycles' render={(routerProps) => <BicyclesListNeigh {...routerProps} neighbourhoods={this.props.neighbourhoods} />} />
+        <Route path='/neighbourhoods/:id' render={(routerProps) => <BicyclesListNeigh {...routerProps} neighbourhoods={this.props.neighbourhoods} />} />
       </div>
     )
   }
