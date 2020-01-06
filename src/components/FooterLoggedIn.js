@@ -7,6 +7,7 @@ import { Segment, Divider } from 'semantic-ui-react';
 const FooterLoggedIn = ({currentUser}) => {
   return (
     <div>
+      <Segment basic></Segment>
       <Segment attached='bottom' textAlign={'center'} secondary>
         <h5>You are logged in as <Link className='footer-para' to={`/users/${currentUser.id}`}>{currentUser.fullname}</Link> {'\u00b7'} <LogOut /></h5>
         <Divider />
