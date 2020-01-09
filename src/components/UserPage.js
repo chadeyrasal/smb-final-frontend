@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import AnneLaure from '../images/AnneLaure.png';
-import { Container, Card, Grid, Segment, Image, Divider, Button } from 'semantic-ui-react';
+import { Container, Card, Grid, Segment, Image, Divider, Button, Header } from 'semantic-ui-react';
 
 const UserPage = (props) => {
   let user = props.currentUser
@@ -32,12 +32,12 @@ const UserPage = (props) => {
             </Grid.Column>
             <Grid.Column>
               <Segment basic>
-                Hello there
+                <Segment basic textAlign={'center'}><Header>Your Trips</Header></Segment>
               </Segment>
             </Grid.Column>
             <Grid.Column>
               <Segment basic>
-                Hi there
+                <Segment basic textAlign={'center'}><Header>Your Bicycles</Header></Segment>
               </Segment>
             </Grid.Column>
           </Grid.Row>
