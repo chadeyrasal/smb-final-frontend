@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Container, Card, Image, Grid, Segment } from 'semantic-ui-react';
+import { Container, Card, Grid, Segment } from 'semantic-ui-react';
 
 const UserPage = (props) => {
   let user = props.currentUser
