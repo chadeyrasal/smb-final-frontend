@@ -1,5 +1,6 @@
 import React from 'react';
 import BicyclesCard from './BicyclesCard';
+import AnneLaure from '../images/AnneLaure.png';
 import { Container, Grid, Segment, Image, Card, Header } from 'semantic-ui-react';
 
 const UserProfile = (props) => {
@@ -13,7 +14,7 @@ const UserProfile = (props) => {
             <Grid.Column>
               <Segment basic>
                 <Card>
-                  <Image src='https://react.semantic-ui.com/images/wireframe/image.png'/>
+                  <Image src={AnneLaure}/>
                   <Card.Content>
                     <Card.Header>{user.fullname}</Card.Header>
                     <Card.Meta>Member since {new Intl.DateTimeFormat('en-GB', {year: 'numeric', month: 'long'}).format(new Date(Date.parse(user.created_at)))}</Card.Meta>
