@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Container, Card, Grid, Segment } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import AnneLaure from '../images/AnneLaure.png';
+import { Container, Card, Grid, Segment, Image, Divider, Button } from 'semantic-ui-react';
 
 const UserPage = (props) => {
   let user = props.currentUser
@@ -13,10 +15,17 @@ const UserPage = (props) => {
             <Grid.Column>
               <Segment basic>
                 <Card>
+                  <Image src={AnneLaure} />
                   <Card.Content>
-                    {user.fullname}<br/>
-                    {user.email}<br/>
-                    {user.description}<br/>
+                    <Card.Header>{user.fullname}</Card.Header>
+                    <Divider />
+                    Email address:
+                    <Card.Meta>{user.email}</Card.Meta>
+                    <Divider />
+                    About you:
+                    <Card.Meta>{user.description ? user.description : 'Feel free to write a few words about yourself by editing your personal info'}</Card.Meta>
+                    <Divider />
+                    <Button fluid as={Link} to={`/users/${user.id}/edit`}>Edit Your Account</Button>
                   </Card.Content>
                 </Card>
               </Segment>
