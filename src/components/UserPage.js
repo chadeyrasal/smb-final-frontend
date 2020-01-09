@@ -21,9 +21,18 @@ const UserPage = (props) => {
                 </Card>
               </Segment>
             </Grid.Column>
+            <Grid.Column>
+              <Segment basic>
+                Hello there
+              </Segment>
+            </Grid.Column>
+            <Grid.Column>
+              <Segment basic>
+                Hi there
+              </Segment>
+            </Grid.Column>
           </Grid.Row>
         </Grid>
-        {user.fullname}
       </Container>
     )
   } else {
