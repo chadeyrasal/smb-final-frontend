@@ -25,6 +25,7 @@ const NewTrip = ({newTripForm, bicycle, currentUser, updateNewTripForm}) => {
   const handleSubmit = event => {
     event.preventDefault();
     addProps();
+    addTrip(newTripForm);
   }
 
   return (
