@@ -13,7 +13,7 @@ class NewTrip extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    console.log(this.state)
+    debugger
   }
 
   render() {
@@ -37,4 +37,10 @@ class NewTrip extends React.Component {
   }
 }
 
-export default connect(null, { addTrip })(NewTrip);
+const mapStateToProps = state => {
+  return {
+    newTripForm: state.newTrip
+  }
+}
+
+export default connect(mapStateToProps, { addTrip })(NewTrip);
