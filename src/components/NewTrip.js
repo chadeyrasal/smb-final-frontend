@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { addTrip } from '../actions/trips';
 import { Form, Segment, Button } from 'semantic-ui-react';
 
-const NewTrip = ({newTripForm}) => {
+const NewTrip = ({newTripForm, bicycle, currentUser}) => {
+
   return (
     <div>New Trip Form</div>
   )
