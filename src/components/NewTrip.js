@@ -1,12 +1,33 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addTrip } from '../actions/trips';
+import { addTrip } from '../actions/newTrip';
 import { Form, Segment, Button } from 'semantic-ui-react';
 
 const NewTrip = ({newTripForm, bicycle, currentUser}) => {
+  const handleChange = event => {
+    const {name, value} = event.target;
+    const updatedFormInfo = {
+      ...newTripForm,
+      [name]: value
+    };
+  }
 
   return (
-    <div>New Trip Form</div>
+    <div>
+      <Form>
+        <Form.Field>
+          <label>Start Date: </label>
+          <input type='date' value={newTripForm.startDate} name='startDate' onChange={handleChange} />
+        </Form.Field>
+        <Form.Field>
+          <label>End Date: </label>
+          <input type='date' value={newTripForm.endDate} name='endDate' onChange={handleChange} />
+        </Form.Field>
+        <Segment basic textAlign={'center'}>
+          <Button type='submit' color='olive'>Book this bicycle</Button>
+        </Segment>
+      </Form>
+    </div>
   )
 }
 
