@@ -7,6 +7,8 @@ const initialState = {
 
 export default function newTripReducer(state = initialState, action) {
   switch (action.type) {
+    case 'UPDATE_NEW_TRIP_FORM':
+      return action.payload
     case 'ADD_TRIP':
       return [...state, action.payload]
     default:
