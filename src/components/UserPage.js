@@ -34,6 +34,9 @@ const UserPage = (props) => {
             <Grid.Column>
               <Segment basic>
                 <Segment basic textAlign={'center'}><Header>Your Trips</Header></Segment>
+                user.trips.map(trip =>
+                  console.log(trip)
+                )
                 <Segment basic>Upcoming trips: </Segment>
                 <Segment basic>Past trips: </Segment>
               </Segment>
@@ -41,6 +44,9 @@ const UserPage = (props) => {
             <Grid.Column>
               <Segment basic>
                 <Segment basic textAlign={'center'}><Header>Your Bicycles</Header></Segment>
+                {user.bicycles.map(bicycle =>
+                  bicycle.title
+                )}
               </Segment>
             </Grid.Column>
           </Grid.Row>
