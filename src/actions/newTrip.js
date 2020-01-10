@@ -1,3 +1,10 @@
+export const updateNewTripForm = (formData) => {
+  return {
+    type: 'UPDATE_NEW_TRIP_FORM',
+    payload: formData
+  }
+}
+
 export const addTrip = (formData) => {
   return (dispatch) => {
     fetch('http://localhost:3000/api/v1/trips', {
