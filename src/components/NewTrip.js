@@ -1,15 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addTrip } from '../actions/newTrip';
+import { updateNewTripForm, addTrip } from '../actions/newTrip';
 import { Form, Segment, Button } from 'semantic-ui-react';
 
-const NewTrip = ({newTripForm, bicycle, currentUser}) => {
+const NewTrip = ({newTripForm, bicycle, currentUser, updateNewTripForm}) => {
   const handleChange = event => {
     const {name, value} = event.target;
     const updatedFormInfo = {
       ...newTripForm,
       [name]: value
     };
+    updateNewTripForm(updatedFormInfo);
   }
 
   return (
@@ -71,4 +72,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { addTrip })(NewTrip);
+export default connect(mapStateToProps, { updateNewTripForm, addTrip })(NewTrip);
