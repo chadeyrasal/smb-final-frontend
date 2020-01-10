@@ -10,7 +10,7 @@ import currentUserReducer from './reducers/currentUserReducer';
 import loginReducer from './reducers/loginReducer';
 import signupReducer from './reducers/signupReducer';
 import bicycleReducer from './reducers/bicycleReducer';
-import tripReducer from './reducers/tripReducer';
+import newTripReducer from './reducers/newTripReducer';
 import neighbourhoodReducer from './reducers/neighbourhoodReducer';
 
 import App from './App';
@@ -22,7 +22,7 @@ const reducer = combineReducers({
   login: loginReducer,
   signup: signupReducer,
   bicycles: bicycleReducer,
-  trips: tripReducer,
+  newTrip: newTripReducer,
   neighbourhoods: neighbourhoodReducer
 })
 
