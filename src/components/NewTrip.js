@@ -4,6 +4,15 @@ import { updateNewTripForm, addTrip } from '../actions/newTrip';
 import { Form, Segment, Button } from 'semantic-ui-react';
 
 const NewTrip = ({newTripForm, bicycle, currentUser, updateNewTripForm}) => {
+  const addProps = () => {
+    const addedProps = {
+      ...newTripForm,
+      bicycle: bicycle,
+      renter: currentUser
+    };
+    updateNewTripForm(addedProps);
+  }
+
   const handleChange = event => {
     const {name, value} = event.target;
     const updatedFormInfo = {
@@ -13,9 +22,14 @@ const NewTrip = ({newTripForm, bicycle, currentUser, updateNewTripForm}) => {
     updateNewTripForm(updatedFormInfo);
   }
 
+  const handleSubmit = event => {
+    event.preventDefault();
+    addProps();
+  }
+
   return (
     <div>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Form.Field>
           <label>Start Date: </label>
           <input type='date' value={newTripForm.startDate} name='startDate' onChange={handleChange} />
