@@ -18,6 +18,7 @@ const UserPage = (props) => {
                   <Image src={AnneLaure} />
                   <Card.Content>
                     <Card.Header>{user.fullname}</Card.Header>
+                    <Card.Meta>You joined in {new Intl.DateTimeFormat('en-GB', {year: 'numeric', month: 'long'}).format(new Date(Date.parse(user.created_at)))}</Card.Meta>
                     <Divider />
                     Email address:
                     <Card.Meta>{user.email}</Card.Meta>
@@ -33,6 +34,8 @@ const UserPage = (props) => {
             <Grid.Column>
               <Segment basic>
                 <Segment basic textAlign={'center'}><Header>Your Trips</Header></Segment>
+                <Segment basic>Upcoming trips: </Segment>
+                <Segment basic>Past trips: </Segment>
               </Segment>
             </Grid.Column>
             <Grid.Column>
