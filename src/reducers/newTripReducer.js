@@ -11,8 +11,6 @@ export default function newTripReducer(state = initialState, action) {
       return action.payload
     case 'RESET_NEW_TRIP_FORM':
       return initialState
-    case 'CREATE_TRIP':
-      return [...state, action.payload]
     default:
       return state
   }
