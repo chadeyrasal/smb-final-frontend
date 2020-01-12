@@ -34,9 +34,13 @@ const UserPage = (props) => {
             <Grid.Column>
               <Segment basic>
                 <Segment basic textAlign={'center'}><Header>Your Trips</Header></Segment>
-                user.trips.map(trip =>
-                  console.log(trip)
-                )
+                <ul>
+                  {user.reservations.map(resa =>
+                    <li key={resa.id}>
+                      {new Intl.DateTimeFormat('en-GB', {year: 'numeric', month: 'long', day: 'numeric'}).format(new Date(Date.parse(resa.start_date)))} to {new Intl.DateTimeFormat('en-GB', {year: 'numeric', month: 'long', day: 'numeric'}).format(new Date(Date.parse(resa.end_date)))}
+                    </li>
+                  )}
+                </ul>
                 <Segment basic>Upcoming trips: </Segment>
                 <Segment basic>Past trips: </Segment>
               </Segment>
