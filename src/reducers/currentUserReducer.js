@@ -5,7 +5,7 @@ export default function currentUserReducer(state = null, action) {
     case 'CLEAR_CURRENT_USER':
       return null
     case 'CREATE_TRIP':
-      return null
+      return {...state, state.trips: [...state.trips, action.payload]}
     default:
       return state
   }
