@@ -18,7 +18,7 @@ export const setCurrentUser = user => {
   }
 }
 
-export const login = credentials => {
+export const login = (credentials, history) => {
   return (dispatch) => {
     fetch('http://localhost:3000/api/v1/login', {
       credentials: 'include',
@@ -35,6 +35,7 @@ export const login = credentials => {
         } else {
           dispatch(setCurrentUser(user))
           dispatch(resetLoginForm())
+          history.push('/')
         }
       })
       .catch(console.log)
@@ -93,7 +94,7 @@ export const resetSignupForm = () => {
   }
 }
 
-export const signup = credentials => {
+export const signup = (credentials, history) => {
   return (dispatch) => {
     const userInfo = {
       user: credentials
@@ -113,6 +114,7 @@ export const signup = credentials => {
         } else {
           dispatch(setCurrentUser(response))
           dispatch(resetSignupForm())
+          history.push('/')
         }
       })
       .catch(console.log)
