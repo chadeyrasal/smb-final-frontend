@@ -37,7 +37,7 @@ const UserPage = (props) => {
                 <ul>
                   {user.reservations.map(resa =>
                     <li key={resa.id}>
-                      {new Intl.DateTimeFormat('en-GB', {year: 'numeric', month: 'long', day: 'numeric'}).format(new Date(Date.parse(resa.start_date)))} to {new Intl.DateTimeFormat('en-GB', {year: 'numeric', month: 'long', day: 'numeric'}).format(new Date(Date.parse(resa.end_date)))}
+                      {new Intl.DateTimeFormat('en-GB', {year: 'numeric', month: 'short', day: 'numeric'}).format(new Date(Date.parse(resa.start_date)))} to {new Intl.DateTimeFormat('en-GB', {year: 'numeric', month: 'short', day: 'numeric'}).format(new Date(Date.parse(resa.end_date)))}
                     </li>
                   )}
                 </ul>
