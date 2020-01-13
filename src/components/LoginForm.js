@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { updateLoginForm, login } from '../actions/auth';
 import { Form, Button, Container, Segment, Divider } from 'semantic-ui-react';
 
-const LoginForm = ({loginFormData, updateLoginForm, login}) => {
+const LoginForm = ({ loginFormData, updateLoginForm, login, history }) => {
   const handleChange = event => {
     const {name, value} = event.target;
     const updatedFormInfo = {
@@ -16,7 +16,7 @@ const LoginForm = ({loginFormData, updateLoginForm, login}) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    login(loginFormData);
+    login(loginFormData, history);
   }
 
   return (
@@ -51,4 +51,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {updateLoginForm, login})(LoginForm);
+export default connect(mapStateToProps, { updateLoginForm, login })(LoginForm);
