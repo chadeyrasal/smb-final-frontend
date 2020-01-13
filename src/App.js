@@ -14,6 +14,7 @@ import TripsContainer from './containers/TripsContainer';
 import NeighbourhoodsContainer from './containers/NeighbourhoodsContainer';
 import UsersContainer from './containers/UsersContainer';
 import { Route } from 'react-router-dom';
+import './App.css';
 
 class App extends React.Component {
   componentDidMount() {
