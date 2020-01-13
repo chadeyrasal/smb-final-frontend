@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 import { fetchBicycles } from '../actions/fetchBicycles';
 import BicyclePage from '../components/BicyclePage';
+import CreateBicycleForm from '../components/CreateBicycleForm';
 
 class BicyclesContainer extends React.Component {
   componentDidMount() {
@@ -13,6 +14,7 @@ class BicyclesContainer extends React.Component {
     return (
       <div>
         <Route path='/bicycles/:id' render={(routerProps) => <BicyclePage {...routerProps} bicycles={this.props.bicycles} />} />
+        <Route exact path='/bicycles/new' component={CreateBicycleForm} />
       </div>
     )
   }
