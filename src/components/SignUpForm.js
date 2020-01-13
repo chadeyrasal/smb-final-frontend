@@ -4,7 +4,7 @@ import { updateSignupForm, signup } from '../actions/auth';
 import { Link } from 'react-router-dom';
 import { Form, Button, Container, Segment, Divider } from 'semantic-ui-react';
 
-const SignUpForm = ({ signupFormData, updateSignupForm, signup }) => {
+const SignUpForm = ({ signupFormData, updateSignupForm, signup, history }) => {
 
   const handleChange = event => {
     const { name, value } = event.target
@@ -17,7 +17,7 @@ const SignUpForm = ({ signupFormData, updateSignupForm, signup }) => {
 
   const handleSubmit = event => {
     event.preventDefault()
-    signup(signupFormData)
+    signup(signupFormData, history)
   }
 
   return (
