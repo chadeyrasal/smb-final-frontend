@@ -4,7 +4,7 @@ import { updateSignupForm, signup } from '../actions/auth';
 import { Link } from 'react-router-dom';
 import { Form, Button, Container, Segment, Divider } from 'semantic-ui-react';
 
-const SignUpForm = ({ signupFormData, updateSignupForm, signup, history }) => {
+const SignUpForm = ({ signupFormData, updateSignupForm, signup }) => {
 
   const handleChange = event => {
     const { name, value } = event.target
@@ -17,7 +17,7 @@ const SignUpForm = ({ signupFormData, updateSignupForm, signup, history }) => {
 
   const handleSubmit = event => {
     event.preventDefault()
-    signup(signupFormData, history)
+    signup(signupFormData)
   }
 
   return (
@@ -35,6 +35,11 @@ const SignUpForm = ({ signupFormData, updateSignupForm, signup, history }) => {
           <Form.Field>
             <label>Password: </label><br/>
             <input value={signupFormData.password} onChange={handleChange} type='password' name='password' />
+          </Form.Field>
+          <Form.Field>
+            <label>About you: </label>
+            Write a few words about you fo others to get to know you better <br /><br />
+            <input value={signupFormData.description} onChange={handleChange} type='text' name='description' />
           </Form.Field>
           <Segment basic textAlign={'center'}>
             <Button type='submit' color='olive' style={{textAlign: 'center'}}>Sign Up</Button>
