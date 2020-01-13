@@ -93,7 +93,7 @@ export const resetSignupForm = () => {
   }
 }
 
-export const signup = (credentials, history) => {
+export const signup = credentials => {
   return (dispatch) => {
     const userInfo = {
       user: credentials
@@ -113,7 +113,6 @@ export const signup = (credentials, history) => {
         } else {
           dispatch(setCurrentUser(response.data))
           dispatch(resetSignupForm())
-          history.push('/')
         }
       })
       .catch(console.log)
