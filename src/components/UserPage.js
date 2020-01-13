@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import BicyclesCard from './BicyclesCard';
 import AnneLaure from '../images/AnneLaure.png';
 import { Container, Card, Grid, Segment, Image, Divider, Button, Header } from 'semantic-ui-react';
 
@@ -45,12 +46,11 @@ const UserPage = (props) => {
             </Grid.Column>
             <Grid.Column>
               <Segment basic>
-                <Segment basic textAlign={'center'}><Header>Your Bicycles</Header></Segment>
-                <ul>
-                  {user.bicycles.map(bicycle =>
-                    <li key={bicycle.id}>{bicycle.title}</li>
-                  )}
-                </ul>
+                <Segment basic textAlign={'center'}>
+                  <Header>Your Bicycles</Header>
+                  {user.bicycles.length !== 0 ? <Segment basic><BicyclesCard user={user} /></Segment> : <Segment basic>You haven't listed any bicycle yet</Segment>}
+                  <Button as={Link} to='/bicycles/new' fluid>List your Bicycle</Button>
+                </Segment>
               </Segment>
             </Grid.Column>
           </Grid.Row>
