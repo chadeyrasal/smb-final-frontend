@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import BicyclesCard from './BicyclesCard';
 import AnneLaure from '../images/AnneLaure.png';
-import { Container, Card, Grid, Segment, Image, Divider, Button, Header } from 'semantic-ui-react';
+import { Container, Card, Grid, Segment, Image, Divider, Button, Header, List } from 'semantic-ui-react';
 
 const UserPage = (props) => {
   let user = props.currentUser
@@ -33,19 +33,27 @@ const UserPage = (props) => {
               </Segment>
             </Grid.Column>
             <Grid.Column>
-              <Segment basic>
-                <Segment basic textAlign={'center'}>
+              <Segment basic textAlign={'center'}>
+                <Segment basic>
                   <Header>Your Trips</Header>
                   {user.reservations.length !== 0 ? null : <Segment basic>You haven't booked any trip yet</Segment>}
                   {user.reservations.length !== 0 ? null : <Button as={Link} to='/cities' fluid>Browse Cities</Button>}
                 </Segment>
-                <ul>
-                  {user.reservations.map(resa =>
-                    <li key={resa.id}>
-                      {new Intl.DateTimeFormat('en-GB', {month: 'short', day: 'numeric'}).format(new Date(Date.parse(resa.start_date)))} to {new Intl.DateTimeFormat('en-GB', {year: 'numeric', month: 'short', day: 'numeric'}).format(new Date(Date.parse(resa.end_date)))}
-                    </li>
-                  )}
-                </ul>
+                <Card>
+                  <Card.Content>
+                    <List divided relaxed>
+                      {user.reservations.map(resa =>
+                        <List.Item key={resa.id}>
+                          <List.Content>
+                            {console.log(resa)}
+                            <Card.Description>Title of the bicycle</Card.Description>
+                            <Card.Meta>{new Intl.DateTimeFormat('en-GB', {month: 'short', day: 'numeric'}).format(new Date(Date.parse(resa.start_date)))} to {new Intl.DateTimeFormat('en-GB', {year: 'numeric', month: 'short', day: 'numeric'}).format(new Date(Date.parse(resa.end_date)))}</Card.Meta>
+                          </List.Content>
+                        </List.Item>
+                      )}
+                    </List>
+                  </Card.Content>
+                </Card>
 
               </Segment>
             </Grid.Column>
