@@ -34,7 +34,11 @@ const UserPage = (props) => {
             </Grid.Column>
             <Grid.Column>
               <Segment basic>
-                <Segment basic textAlign={'center'}><Header>Your Trips</Header></Segment>
+                <Segment basic textAlign={'center'}>
+                  <Header>Your Trips</Header>
+                  {user.reservations.length !== 0 ? null : <Segment basic>You haven't booked any trip yet</Segment>}
+                  {user.reservations.length !== 0 ? null : <Button as={Link} to='/cities' fluid>Browse Cities</Button>}
+                </Segment>
                 <ul>
                   {user.reservations.map(resa =>
                     <li key={resa.id}>
@@ -42,6 +46,7 @@ const UserPage = (props) => {
                     </li>
                   )}
                 </ul>
+
               </Segment>
             </Grid.Column>
             <Grid.Column>
