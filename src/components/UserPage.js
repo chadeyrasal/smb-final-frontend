@@ -48,6 +48,8 @@ const UserPage = (props) => {
                             {console.log(resa)}
                             <Card.Description>Title of the bicycle</Card.Description>
                             <Card.Meta>{new Intl.DateTimeFormat('en-GB', {month: 'short', day: 'numeric'}).format(new Date(Date.parse(resa.start_date)))} to {new Intl.DateTimeFormat('en-GB', {year: 'numeric', month: 'short', day: 'numeric'}).format(new Date(Date.parse(resa.end_date)))}</Card.Meta>
+                            <Divider />
+                            {resa.review ? <Card.Meta>resa.review</Card.Meta> : <Button as={Link} to={`/trips/${resa.id}/edit`}>Review Your Trip</Button>}
                           </List.Content>
                         </List.Item>
                       )}
