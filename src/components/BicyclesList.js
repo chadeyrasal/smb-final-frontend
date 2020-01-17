@@ -9,7 +9,6 @@ class BicyclesList extends React.Component {
   }
 
   increaseCounter = () => {
-    console.log('hey')
     this.setState(prevState => {
       return {
         ...prevState,
@@ -45,7 +44,7 @@ class BicyclesList extends React.Component {
                       </Button.Group>
                       <Divider />
                       <Button as='div' labelPosition='right'>
-                        <Button icon onClick={this.handleClick}><Icon name='heart' /> Like</Button>
+                        <Button icon onClick={this.increaseCounter}><Icon name='heart' /> Like</Button>
                         <Label as='a' basic pointing='left'>{this.state.counter}</Label>
                       </Button>
                     </Segment>
@@ -60,12 +59,6 @@ class BicyclesList extends React.Component {
       return null
     }
   }
-
-
-
-
 }
-
-
 
 export default BicyclesList;
