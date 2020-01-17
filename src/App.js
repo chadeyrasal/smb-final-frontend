@@ -7,7 +7,7 @@ import LoginForm from './components/LoginForm';
 import SignUpForm from './components/SignUpForm';
 import FooterLoggedIn from './components/FooterLoggedIn';
 import FooterLoggedOut from './components/FooterLoggedOut';
-import HomeContainer from './containers/HomeContainer';
+import HomePage from './components/HomePage';
 import CitiesContainer from './containers/CitiesContainer';
 import BicyclesContainer from './containers/BicyclesContainer';
 import TripsContainer from './containers/TripsContainer';
@@ -28,7 +28,7 @@ class App extends React.Component {
 
         <Route path='/login' component={LoginForm} />
         <Route path='/signup' component={SignUpForm} />
-        <Route exact path='/' component={HomeContainer} />
+        <Route exact path='/' component={HomePage} />
         <Route path='/cities' component={CitiesContainer} />
         <Route path='/bicycles' component={BicyclesContainer} />
         <Route path='/trips' component={TripsContainer} />
