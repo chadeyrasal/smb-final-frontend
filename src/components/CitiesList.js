@@ -1,49 +1,29 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import CityImage from '../images/city-landscape-at-night.jpg';
-import { Button, Card, Image, Segment, Container, Divider, Icon, Label } from 'semantic-ui-react';
+import CityCard from './CityCard';
+import { Card, Container, Segment, Input } from 'semantic-ui-react';
 
 class CitiesList extends React.Component {
   state = {
-    city: {}
+    searchCrit: ''
   }
 
-  handleClick = (cityId) => {
-    let city = this.props.cities.filter(city => city.id === cityId)[0]
-    city.likes = city.likes + 1
-    this.setState({city: city})
+  handleChange = (event) => {
+    this.setState({searchCrit: event.target.value});
   }
 
   render() {
+    let allCities = this.state.searchCrit !== '' ? this.props.cities.filter(city => city.name.includes(this.state.searchCrit)) : this.props.cities
+
     return (
       <Container className='cards-wrapper'>
-        <Card.Group>
-          {this.props.cities.map(city =>
-            <Card key={city.id}>
-              <Card.Content>
-                <Image floated='right' size='tiny' src={CityImage} />
-                <Card.Header><Link className='bold-link' to={`/cities/${city.id}`}>{city.name}</Link></Card.Header>
-                <Card.Meta>{city.country.name}</Card.Meta>
-                <Card.Description>
-                  See details on <Link className='bold-link' to={`/cities/${city.id}`}>{city.name}</Link> neighbourhoods and bicycles by clicking the buttons below
-                </Card.Description>
-              </Card.Content>
-              <Card.Content extra>
-                <Segment basic textAlign={'center'}>
-                  <Button.Group vertical labeled icon basic>
-                    <Button as={Link} to={`/cities/${city.id}/bicycles`} icon='bicycle' content='See Bicycles' />
-                    <Button as={Link} to={`/cities/${city.id}/neighbourhoods`} icon='location arrow' content='See Neighbourhoods' />
-                  </Button.Group>
-                  <Divider />
-                  <Button as='div' labelPosition='right'>
-                    <Button icon onClick={() => this.handleClick(city.id)}><Icon name='heart' /> Like</Button>
-                    <Label as='a' basic pointing='left'>{city.likes}</Label>
-                  </Button>
-                </Segment>
-              </Card.Content>
-            </Card>
-          )}
-        </Card.Group>
+        <Segment textAlign={'center'} basic>
+          <Input icon='search' placeholder='Search cities...' onChange={this.handleChange}/><br/><br/>
+          <Card.Group>
+            {allCities.map(city =>
+              <CityCard key={city.id} city={city} />
+            )}
+          </Card.Group>
+        </Segment>
       </Container>
     )
   }
