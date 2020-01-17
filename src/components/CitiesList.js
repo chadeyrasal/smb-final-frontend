@@ -5,11 +5,13 @@ import { Button, Card, Image, Segment, Container, Divider, Icon, Label } from 's
 
 class CitiesList extends React.Component {
   state = {
-    cities: []
+    city: {}
   }
 
-  handleClick = () => {
-    console.log(this.state)
+  handleClick = (cityId) => {
+    let city = this.props.cities.filter(city => city.id === cityId)[0]
+    city.likes = city.likes + 1
+    this.setState({city: city})
   }
 
   render() {
@@ -18,7 +20,6 @@ class CitiesList extends React.Component {
         <Card.Group>
           {this.props.cities.map(city =>
             <Card key={city.id}>
-              {console.log(this.state)}
               <Card.Content>
                 <Image floated='right' size='tiny' src={CityImage} />
                 <Card.Header><Link className='bold-link' to={`/cities/${city.id}`}>{city.name}</Link></Card.Header>
@@ -35,7 +36,7 @@ class CitiesList extends React.Component {
                   </Button.Group>
                   <Divider />
                   <Button as='div' labelPosition='right'>
-                    <Button icon onClick={this.handleClick}><Icon name='heart' /> Like</Button>
+                    <Button icon onClick={() => this.handleClick(city.id)}><Icon name='heart' /> Like</Button>
                     <Label as='a' basic pointing='left'>{city.likes}</Label>
                   </Button>
                 </Segment>
