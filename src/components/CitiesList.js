@@ -12,14 +12,14 @@ class CitiesList extends React.Component {
   }
 
   render() {
-    let allCities = this.state.searchCrit !== '' ? this.props.cities.filter(city => city.name.includes(this.state.searchCrit)) : this.props.cities
+    let cities = this.state.searchCrit !== '' ? this.props.cities.filter(city => city.name.includes(this.state.searchCrit)) : this.props.cities
 
     return (
       <Container className='cards-wrapper'>
         <Segment textAlign={'center'} basic>
           <Input icon='search' placeholder='Search cities...' onChange={this.handleChange}/><br/><br/>
           <Card.Group>
-            {allCities.map(city =>
+            {cities.map(city =>
               <CityCard key={city.id} city={city} />
             )}
           </Card.Group>
