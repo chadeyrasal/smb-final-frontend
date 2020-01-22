@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Input, Menu, Segment, Dropdown } from 'semantic-ui-react';
+import { Menu, Segment, Dropdown } from 'semantic-ui-react';
 
 class NavBarLoggedIn extends React.Component {
   state = { activeItem: 'home' }
@@ -17,9 +17,6 @@ class NavBarLoggedIn extends React.Component {
       <Segment>
         <Menu secondary>
           <Menu.Item as={Link} to='/' name='home' active={activeItem === 'home'} onClick={this.handleItemClick}>Home</Menu.Item>
-          <Menu.Item>
-            <Input icon='search' placeholder='Search cities...' />
-          </Menu.Item>
           <Menu.Menu position='right'>
             <Menu.Item as={Link} to='/cities' name='cities' active={activeItem === 'cities'} onClick={this.handleItemClick}>Cities</Menu.Item>
             <Menu.Item as={Link} to='/bicycles/new' name='bicycles/new' active={activeItem === 'bicycles/new'} onClick={this.handleItemClick}>List Your Bicycle</Menu.Item>

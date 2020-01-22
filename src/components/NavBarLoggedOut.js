@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Input, Menu, Segment } from 'semantic-ui-react';
+import { Menu, Segment } from 'semantic-ui-react';
 
 class NavBarLoggedOut extends React.Component {
   state = { activeItem: 'home' }
@@ -23,9 +23,6 @@ class NavBarLoggedOut extends React.Component {
             onClick={this.handleItemClick}>
             Home
           </Menu.Item>
-          <Menu.Item>
-            <Input icon='search' placeholder='Search cities...' />
-          </Menu.Item>
           <Menu.Menu position='right'>
             <Menu.Item
               as={Link}
@@ -37,7 +34,7 @@ class NavBarLoggedOut extends React.Component {
             </Menu.Item>
             <Menu.Item
               as={Link}
-              to='/signup' 
+              to='/signup'
               name='signup'
               active={activeItem === 'signup'}
               onClick={this.handleItemClick}>
