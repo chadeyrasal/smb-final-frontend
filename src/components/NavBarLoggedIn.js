@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Menu, Segment, Dropdown } from 'semantic-ui-react';
+import Logo from '../images/Logo-SMB-202001.png';
+import { Menu, Segment, Dropdown, Image } from 'semantic-ui-react';
 
 class NavBarLoggedIn extends React.Component {
   state = { activeItem: 'home' }
@@ -16,6 +17,7 @@ class NavBarLoggedIn extends React.Component {
     return(
       <Segment>
         <Menu secondary>
+          <Menu.Item><Image src={Logo} size='small' /></Menu.Item>
           <Menu.Item as={Link} to='/' name='home' active={activeItem === 'home'} onClick={this.handleItemClick}>Home</Menu.Item>
           <Menu.Menu position='right'>
             <Menu.Item as={Link} to='/cities' name='cities' active={activeItem === 'cities'} onClick={this.handleItemClick}>Cities</Menu.Item>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, Segment } from 'semantic-ui-react';
+import Logo from '../images/Logo-SMB-202001.png';
+import { Menu, Segment, Image } from 'semantic-ui-react';
 
 class NavBarLoggedOut extends React.Component {
   state = { activeItem: 'home' }
@@ -15,6 +16,7 @@ class NavBarLoggedOut extends React.Component {
     return(
       <Segment>
         <Menu secondary>
+          <Menu.Item><Image src={Logo} size='small' /></Menu.Item>
           <Menu.Item
             as={Link}
             to='/'
