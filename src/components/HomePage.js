@@ -5,7 +5,7 @@ import { Image } from 'semantic-ui-react';
 const HomePage = () => {
   return (
     <div>
-      <Image src={BicycleImage} fluid />
+      <Image className='homepage-image' src={BicycleImage} size='huge' centered/>
     </div>
   )
 }
