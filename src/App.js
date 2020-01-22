@@ -10,7 +10,6 @@ import FooterLoggedOut from './components/FooterLoggedOut';
 import HomePage from './components/HomePage';
 import CitiesContainer from './containers/CitiesContainer';
 import BicyclesContainer from './containers/BicyclesContainer';
-import TripsContainer from './containers/TripsContainer';
 import NeighbourhoodsContainer from './containers/NeighbourhoodsContainer';
 import UsersContainer from './containers/UsersContainer';
 import { Route } from 'react-router-dom';
@@ -31,7 +30,6 @@ class App extends React.Component {
         <Route exact path='/' component={HomePage} />
         <Route path='/cities' component={CitiesContainer} />
         <Route path='/bicycles' component={BicyclesContainer} />
-        <Route path='/trips' component={TripsContainer} />
         <Route path='/neighbourhoods/:id' component={NeighbourhoodsContainer} />
         <Route path='/users' component={UsersContainer} />
 
