@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 import UserPage from '../components/UserPage';
 import UserProfile from '../components/UserProfile';
+import TripsList from '../components/TripsList';
 import { fetchUsers } from '../actions/users';
 
 class UsersContainer extends React.Component {
@@ -15,6 +16,7 @@ class UsersContainer extends React.Component {
       <div>
         <Route exact path='/users/:id' component={UserPage} />
         <Route path='/users/:id/profile' render={(routerProps) => <UserProfile {...routerProps} users={this.props.users}/>} />
+        <Route path='/users/:id/trips' component={TripsList} />
       </div>
     )
   }
