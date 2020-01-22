@@ -5,8 +5,7 @@ import NavBarLoggedIn from './components/NavBarLoggedIn';
 import NavBarLoggedOut from './components/NavBarLoggedOut';
 import LoginForm from './components/LoginForm';
 import SignUpForm from './components/SignUpForm';
-import FooterLoggedIn from './components/FooterLoggedIn';
-import FooterLoggedOut from './components/FooterLoggedOut';
+import Footer from './components/Footer';
 import HomePage from './components/HomePage';
 import CitiesContainer from './containers/CitiesContainer';
 import BicyclesContainer from './containers/BicyclesContainer';
@@ -33,7 +32,7 @@ class App extends React.Component {
         <Route path='/neighbourhoods/:id' component={NeighbourhoodsContainer} />
         <Route path='/users' component={UsersContainer} />
 
-        {this.props.currentUser ? <FooterLoggedIn /> : <FooterLoggedOut />}
+        <Footer />
       </div>
     );
   }
