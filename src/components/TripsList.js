@@ -10,7 +10,7 @@ const TripsList = ({ currentUser }) => {
         <Segment basic textAlign={'center'}>
           <Header>Your Trips</Header>
           {currentUser.reservations.length === 0 ? <Segment basic>You haven't booked any trip yet</Segment> : null}
-          {currentUser.reservations.length === 0 ? <Button as={Link} to='/cities' color='grey' basic>Browse Cities</Button> : null}
+          {currentUser.reservations.length === 0 ? <Button as={Link} to='/cities'>Browse Cities</Button> : null}
           <ul>
             {currentUser.reservations.map(resa =>
               <li>{resa.start_date}</li>
