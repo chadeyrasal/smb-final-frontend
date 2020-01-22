@@ -28,7 +28,8 @@ class CreateBicycleForm extends React.Component {
       bicycle_type: '',
       size: '',
       colour: '',
-      price: ''
+      price: '',
+      country: {}
     })
   }
 
@@ -98,4 +99,10 @@ class CreateBicycleForm extends React.Component {
   }
 }
 
-export default connect(null, {addBicycle})(CreateBicycleForm);
+const mapStateToProps = state => {
+  return {
+    countries: state.countries
+  }
+}
+
+export default connect(mapStateToProps, {addBicycle})(CreateBicycleForm);
