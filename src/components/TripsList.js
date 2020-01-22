@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Container, Header, Segment } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import { Container, Header, Segment, Button } from 'semantic-ui-react';
 
 const TripsList = ({ currentUser }) => {
   if (currentUser) {
@@ -8,6 +9,13 @@ const TripsList = ({ currentUser }) => {
       <Container>
         <Segment basic textAlign={'center'}>
           <Header>Your Trips</Header>
+          {currentUser.reservations.length === 0 ? <Segment basic>You haven't booked any trip yet</Segment> : null}
+          {currentUser.reservations.length === 0 ? <Button as={Link} to='/cities' color='grey' basic>Browse Cities</Button> : null}
+          <ul>
+            {currentUser.reservations.map(resa =>
+              <li>{resa.start_date}</li>
+            )}
+          </ul>
         </Segment>
       </Container>
     )
